@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { useRef, type ReactNode } from "react";
+import { useRef, type ReactNode } from 'react';
 import {
   motion,
   useReducedMotion,
   useScroll,
   useTransform,
-} from "motion/react";
-import { cn } from "@/lib/utils";
+} from 'motion/react';
+import { cn } from '@/lib/utils';
 
 interface ContainerScrollStageProps {
   children: ReactNode;
@@ -28,7 +28,7 @@ export function ContainerScrollStage({
 
   const { scrollYProgress } = useScroll({
     target: stageRef,
-    offset: ["start end", "center center"],
+    offset: ['start end', 'center center'],
   });
 
   const rotateX = useTransform(scrollYProgress, [0, 1], [15, 0]);
@@ -38,8 +38,8 @@ export function ContainerScrollStage({
   return (
     <div
       ref={stageRef}
-      style={{ perspective: "1200px" }}
-      className={cn("relative w-full", className)}
+      style={{ perspective: '1200px' }}
+      className={cn('relative w-full', className)}
     >
       <motion.div
         style={
@@ -49,7 +49,7 @@ export function ContainerScrollStage({
                 rotateX,
                 scale,
                 y: translateY,
-                transformStyle: "preserve-3d",
+                transformStyle: 'preserve-3d',
               }
         }
         className="will-change-transform border border-[#A7A6A3]/25 bg-[#17191B] p-2 shadow-[0_40px_100px_-30px_rgba(0,0,0,0.85)] sm:p-3"

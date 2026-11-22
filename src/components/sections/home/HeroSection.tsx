@@ -19,14 +19,12 @@ const HERO_DISCIPLINES = [
 ];
 
 export function HeroSection() {
-  const heroMedia = getMediaAsset('residence-pavilion');
-
   return (
     <section
       aria-label="BLACKSTEEL Hero"
       className="relative overflow-hidden bg-[#17191B] bg-arch-grid-dark pb-20 pt-36 text-[#F2F0EC] sm:pb-28 sm:pt-44 lg:pb-32 lg:pt-52"
     >
-      {/* Monochrome Architectural Spotlight + Converging Steel Beams */}
+      {/* Steel-blue spotlight + converging light beams */}
       <SpotlightBeams />
 
       {/* Subtle Radial Vignette Focusing Attention on the Stage */}
@@ -191,8 +189,8 @@ export function HeroSection() {
           <ContainerScrollStage>
             <div className="relative aspect-[16/10] w-full sm:aspect-[16/9] lg:aspect-[21/10]">
               <Image
-                src={heroMedia.src}
-                alt={heroMedia.alt}
+                src={'/images/kitchen/1.jpg'}
+                alt="Luxury kitchen remodel with custom millwork, a stone island, and integrated appliances"
                 fill
                 priority
                 quality={88}
@@ -207,10 +205,10 @@ export function HeroSection() {
               {/* Top Stage Bar */}
               <div className="absolute inset-x-4 top-4 z-10 flex flex-wrap items-center justify-between gap-3 sm:inset-x-6 sm:top-6">
                 <span className="glass-photo px-3 py-1 font-mono text-[10px] uppercase tracking-[0.2em]">
-                  Elevation Study · 01.A
+                  Kitchen Remodel · 01.A
                 </span>
                 <span className="glass-photo px-3 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-[#D8D5CF]">
-                  Demonstration Architectural Photography
+                  Demonstration Kitchen Photography
                 </span>
               </div>
 
@@ -218,11 +216,11 @@ export function HeroSection() {
               <div className="absolute inset-x-4 bottom-4 z-10 flex flex-col justify-between gap-4 sm:inset-x-6 sm:bottom-6 sm:flex-row sm:items-end">
                 <div className="glass-obsidian max-w-xl p-4 sm:p-5">
                   <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#A7A6A3]">
-                    Memorial / Westlake Architectural Standard
+                    Memorial / Westlake Kitchen Standard
                   </p>
                   <p className="mt-1.5 font-display text-lg font-semibold tracking-[-0.02em] text-[#F2F0EC] sm:text-xl">
-                    Steel-framed glazing, concealed structure, and custom
-                    architectural millwork executed under direct principal
+                    Custom cabinetry, bookmatched stone islands, and precision
+                    appliance integration executed under direct principal
                     control.
                   </p>
                 </div>
