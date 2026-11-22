@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import {
@@ -19,7 +19,6 @@ import { LOCATION_MARKETS } from "@/content/locations";
 import {
   buildPlainTextSpecClipboard,
   calculateScopeModel,
-  clampSqFtForDiscipline,
   DEFAULT_SCOPE_INPUT,
   DESIGN_STATUS_OPTIONS,
   DISCIPLINE_PROFILES,
@@ -27,13 +26,16 @@ import {
   FINISH_TIER_OPTIONS,
   formatCurrencyCompact,
   formatCurrencyFull,
-  SCOPE_STORAGE_KEY,
   STRUCTURAL_CHANGE_OPTIONS,
 } from "@/features/scope-builder/engine";
 import {
+  clearSavedScopeSpec,
+  useSavedScopeSpec,
+  writeSavedScopeSpec,
+} from "@/features/scope-builder/storage";
+import {
   SCOPE_DISCIPLINES,
   SCOPE_MARKETS,
-  scopeModelInputSchema,
   type ScopeDiscipline,
   type ScopeModelInput,
   type StructuralChangeKey,
@@ -58,49 +60,28 @@ export function ScopeBuilderWorkspace({
 }: ScopeBuilderWorkspaceProps) {
   const router = useRouter();
   const prefersReducedMotion = useReducedMotion();
+  const savedSpec = useSavedScopeSpec();
 
   const [step, setStep] = useState<number>(0);
-  const [input, setInput] = useState<ScopeModelInput>(
-    initialInput ?? DEFAULT_SCOPE_INPUT
+  const [draftInput, setDraftInput] = useState<ScopeModelInput | null>(
+    initialInput ?? null
   );
   const [copied, setCopied] = useState(false);
 
-  // Hydrate from sessionStorage only when no explicit URL query spec was provided
-  useEffect(() => {
-    if (initialInput) return;
-    try {
-      const saved = window.sessionStorage.getItem(SCOPE_STORAGE_KEY);
-      if (!saved) return;
-      const parsed = scopeModelInputSchema.safeParse(JSON.parse(saved));
-      if (parsed.success) {
-        setInput({
-          ...parsed.data,
-          squareFeet: clampSqFtForDiscipline(
-            parsed.data.discipline,
-            parsed.data.squareFeet
-          ),
-        });
-      }
-    } catch {
-      // Ignore storage access errors in private browsing contexts
-    }
-  }, [initialInput]);
+  const input = draftInput ?? savedSpec ?? DEFAULT_SCOPE_INPUT;
 
-  // Persist live working spec for seamless return visits in this session
-  useEffect(() => {
-    try {
-      window.sessionStorage.setItem(SCOPE_STORAGE_KEY, JSON.stringify(input));
-    } catch {
-      // Ignore storage errors
-    }
-  }, [input]);
+  const updateInput = (updater: (prev: ScopeModelInput) => ScopeModelInput) => {
+    const next = updater(input);
+    setDraftInput(next);
+    writeSavedScopeSpec(next);
+  };
 
   const model = useMemo(() => calculateScopeModel(input), [input]);
   const activeProfile = DISCIPLINE_PROFILES[input.discipline];
 
   const handleDisciplineChange = (discipline: ScopeDiscipline) => {
     const nextProfile = DISCIPLINE_PROFILES[discipline];
-    setInput((prev) => ({
+    updateInput((prev) => ({
       ...prev,
       discipline,
       squareFeet: nextProfile.defaultSqFt,
@@ -108,7 +89,7 @@ export function ScopeBuilderWorkspace({
   };
 
   const toggleStructuralChange = (key: StructuralChangeKey) => {
-    setInput((prev) => {
+    updateInput((prev) => {
       const exists = prev.structuralChanges.includes(key);
       return {
         ...prev,
@@ -120,11 +101,7 @@ export function ScopeBuilderWorkspace({
   };
 
   const handleHandoffToContact = () => {
-    try {
-      window.sessionStorage.setItem(SCOPE_STORAGE_KEY, JSON.stringify(model.input));
-    } catch {
-      // Ignore storage errors
-    }
+    writeSavedScopeSpec(model.input);
     const query = encodeScopeSpecToQuery(model.input);
     router.push(`/contact?${query}`);
   };
@@ -140,13 +117,9 @@ export function ScopeBuilderWorkspace({
   };
 
   const handleReset = () => {
-    setInput(DEFAULT_SCOPE_INPUT);
+    setDraftInput(DEFAULT_SCOPE_INPUT);
     setStep(0);
-    try {
-      window.sessionStorage.removeItem(SCOPE_STORAGE_KEY);
-    } catch {
-      // Ignore storage errors
-    }
+    clearSavedScopeSpec();
   };
 
   return (
@@ -249,7 +222,7 @@ export function ScopeBuilderWorkspace({
                             key={market}
                             type="button"
                             onClick={() =>
-                              setInput((prev) => ({ ...prev, market }))
+                              updateInput((prev) => ({ ...prev, market }))
                             }
                             aria-pressed={selected}
                             className={cn(
@@ -439,7 +412,7 @@ export function ScopeBuilderWorkspace({
                           step={activeProfile.stepSqFt}
                           value={input.squareFeet}
                           onChange={(event) =>
-                            setInput((prev) => ({
+                            updateInput((prev) => ({
                               ...prev,
                               squareFeet: Number(event.target.value),
                             }))
@@ -475,7 +448,7 @@ export function ScopeBuilderWorkspace({
                                 key={preset.label}
                                 type="button"
                                 onClick={() =>
-                                  setInput((prev) => ({
+                                  updateInput((prev) => ({
                                     ...prev,
                                     squareFeet: preset.sqFt,
                                   }))
@@ -594,7 +567,7 @@ export function ScopeBuilderWorkspace({
                               key={option.key}
                               type="button"
                               onClick={() =>
-                                setInput((prev) => ({
+                                updateInput((prev) => ({
                                   ...prev,
                                   designStatus: option.key,
                                 }))
@@ -646,7 +619,7 @@ export function ScopeBuilderWorkspace({
                             key={tier.key}
                             type="button"
                             onClick={() =>
-                              setInput((prev) => ({
+                              updateInput((prev) => ({
                                 ...prev,
                                 finishTier: tier.key,
                               }))

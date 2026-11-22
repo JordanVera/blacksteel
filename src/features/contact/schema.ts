@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { scopeSpecSummarySchema } from "@/features/scope-builder/schema";
 
 export const PROJECT_LOCATIONS = [
   "Houston",
@@ -84,6 +85,8 @@ export const projectInquirySchema = z.object({
     .max(3000, "Description must be 3,000 characters or fewer."),
   // Hidden honeypot field for spam filtering
   companyWebsite: optionalTrimmedString(200),
+  // Optional structured feasibility breakdown attached from /scope-builder
+  scopeSpec: scopeSpecSummarySchema.optional(),
 });
 
 export type ProjectInquiryInput = z.input<typeof projectInquirySchema>;

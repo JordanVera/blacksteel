@@ -14,6 +14,7 @@ const STATIC_ROUTES = [
   "/services/restoration",
   "/projects",
   "/process",
+  "/scope-builder",
   "/locations/houston",
   "/locations/austin",
   "/contact",

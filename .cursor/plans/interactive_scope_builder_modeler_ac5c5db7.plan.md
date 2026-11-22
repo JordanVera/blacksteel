@@ -10,13 +10,13 @@ todos:
     status: completed
   - id: contact-handoff
     content: Extend projectInquirySchema and ProjectInquiryForm to accept, display, and pre-populate attached Scope Modeler specs from /scope-builder handoff
-    status: in_progress
+    status: completed
   - id: email-delivery
     content: Implement Resend internal email delivery in src/server/integrations/inquiry-gateway.ts formatting both inquiry details and attached scope spec with safe unconfigured fallback
-    status: pending
+    status: completed
   - id: nav-verify
     content: Wire /scope-builder into site navigation, sitemap, homepage/contact callouts, and verify with typecheck, lint, and build
-    status: pending
+    status: completed
 isProject: false
 ---
 

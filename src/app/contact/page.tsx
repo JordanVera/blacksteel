@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ArrowUpRight, SlidersHorizontal } from "lucide-react";
 import { buildPageMetadata } from "@/lib/seo";
 import { SITE_CONFIG } from "@/content/site";
+import { decodeScopeSpecFromSearchParams } from "@/features/scope-builder/engine";
 import { Container } from "@/components/layout/Container";
 import { SectionShell } from "@/components/layout/SectionShell";
 import { PageHero } from "@/components/sections/shared/PageHero";
@@ -14,7 +16,14 @@ export const metadata: Metadata = buildPageMetadata({
   path: "/contact",
 });
 
-export default function ContactPage() {
+interface ContactPageProps {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}
+
+export default async function ContactPage({ searchParams }: ContactPageProps) {
+  const resolvedParams = await searchParams;
+  const initialScopeInput = decodeScopeSpecFromSearchParams(resolvedParams);
+
   return (
     <>
       <PageHero
@@ -29,6 +38,37 @@ export default function ContactPage() {
         <Container>
           <div className="grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-16">
             <aside className="space-y-10 lg:col-span-5">
+              {/* Interactive Scope Modeler Callout */}
+              {!initialScopeInput ? (
+                <div className="arch-crosshair glass-steel space-y-4 p-6 text-[#F2F0EC]">
+                  <p className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-[#A7A6A3]">
+                    <SlidersHorizontal
+                      className="h-3.5 w-3.5"
+                      aria-hidden="true"
+                    />
+                    <span>Interactive Feasibility Tool</span>
+                  </p>
+                  <h2 className="font-display text-xl font-semibold tracking-[-0.02em]">
+                    Not sure where budget or permitting lands?
+                  </h2>
+                  <p className="text-xs leading-[1.68] text-[#D8D5CF]">
+                    Model your Houston or Austin residential scope, permitting
+                    timeline, and investment band first—then attach the full
+                    spec directly to this inquiry.
+                  </p>
+                  <Link
+                    href="/scope-builder"
+                    className="group inline-flex items-center gap-2 border border-[#F2F0EC]/30 px-4 py-2.5 font-mono text-[10px] uppercase tracking-[0.18em] text-[#F2F0EC] transition-colors hover:border-[#F2F0EC] hover:bg-[#F2F0EC] hover:text-[#17191B]"
+                  >
+                    <span>Launch Scope Modeler</span>
+                    <ArrowUpRight
+                      className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                      aria-hidden="true"
+                    />
+                  </Link>
+                </div>
+              ) : null}
+
               <div className="space-y-4">
                 <p className="eyebrow-label text-[#5C5B58] dark:text-[#A7A6A3]">
                   What Happens Next
@@ -56,7 +96,9 @@ export default function ContactPage() {
                         [{item.step}]
                       </span>
                       <div className="space-y-1">
-                        <h2 className="font-display text-lg font-semibold tracking-[-0.02em]">{item.title}</h2>
+                        <h2 className="font-display text-lg font-semibold tracking-[-0.02em]">
+                          {item.title}
+                        </h2>
                         <p className="text-sm leading-[1.68] text-[#34383C] dark:text-[#D8D5CF]">
                           {item.body}
                         </p>
@@ -124,7 +166,7 @@ export default function ContactPage() {
             </aside>
 
             <div className="lg:col-span-7">
-              <ProjectInquiryForm />
+              <ProjectInquiryForm initialScopeInput={initialScopeInput} />
             </div>
           </div>
         </Container>

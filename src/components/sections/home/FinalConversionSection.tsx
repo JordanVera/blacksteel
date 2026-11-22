@@ -108,12 +108,25 @@ export function FinalConversionSection() {
                 </Link>
 
                 <Link
-                  href="/process"
+                  href="/scope-builder"
                   className="group inline-flex items-center justify-between gap-3 border border-[#F2F0EC]/22 px-7 py-4 font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-[#F2F0EC] transition-colors duration-300 hover:border-[#F2F0EC]/65 hover:bg-[#F2F0EC]/[0.05]"
                 >
-                  <span>Review Methodology</span>
+                  <span>Model Scope &amp; Timeline</span>
                   <ArrowUpRight
                     className="h-3.5 w-3.5 text-[#A7A6A3] transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-[#F2F0EC]"
+                    aria-hidden="true"
+                  />
+                </Link>
+              </RevealMask>
+
+              <RevealMask delay={0.18}>
+                <Link
+                  href="/process"
+                  className="group inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-[#A7A6A3] transition-colors duration-200 hover:text-[#F2F0EC]"
+                >
+                  <span>Or review our 5-stage methodology</span>
+                  <ArrowUpRight
+                    className="h-3 w-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                     aria-hidden="true"
                   />
                 </Link>

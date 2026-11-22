@@ -21,12 +21,14 @@ export const PRIMARY_NAV: readonly NavItem[] = [
   { label: "Work", href: "/projects" },
   { label: "Expertise", href: "/services" },
   { label: "Approach", href: "/process" },
+  { label: "Scope Modeler", href: "/scope-builder" },
   { label: "About", href: "/about" },
 ] as const;
 
 export const FOOTER_COLUMNS = {
   practice: [
     { label: "Selected Work", href: "/projects" },
+    { label: "Scope Modeler", href: "/scope-builder" },
     { label: "Our Company", href: "/about" },
     { label: "Our Approach", href: "/process" },
     { label: "Start a Project", href: "/contact" },
