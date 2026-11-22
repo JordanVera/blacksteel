@@ -76,10 +76,10 @@ export default function ProcessPage() {
                 key={item.title}
                 className="glass-surface space-y-3 p-7"
               >
-                <span className="font-serif text-2xl tabular-nums text-[#5C5B58] dark:text-[#A7A6A3]">
-                  0{idx + 1}
+                <span className="font-mono text-xs tabular-nums text-[#5C5B58] dark:text-[#A7A6A3]">
+                  [0{idx + 1}]
                 </span>
-                <h2 className="font-serif text-2xl">{item.title}</h2>
+                <h2 className="font-display text-xl font-semibold tracking-[-0.02em]">{item.title}</h2>
                 <p className="text-sm leading-[1.72] text-[#34383C] dark:text-[#D8D5CF]">
                   {item.detail}
                 </p>

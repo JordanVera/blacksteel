@@ -29,7 +29,7 @@ export default function PrivacyPolicyPlaceholderPage() {
             <p className="eyebrow-label text-[#5C5B58] dark:text-[#A7A6A3]">
               Drafting Notice
             </p>
-            <h2 className="font-serif text-3xl">
+            <h2 className="font-display text-2xl font-semibold tracking-[-0.025em] sm:text-3xl">
               Approved legal language required before launch.
             </h2>
             <p className="text-sm leading-[1.75] text-[#34383C] dark:text-[#D8D5CF]">

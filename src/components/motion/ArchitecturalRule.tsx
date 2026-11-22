@@ -29,7 +29,7 @@ export function ArchitecturalRule({
       className={cn(
         "h-px w-full",
         tone === "default" && "bg-[#17191B]/15 dark:bg-[#A7A6A3]/25",
-        tone === "contrast" && "bg-[#A7A6A3]/25 dark:bg-[#17191B]/15",
+        tone === "contrast" && "bg-[#17191B]/15",
         tone === "light" && "bg-[#F2F0EC]/22",
         className
       )}

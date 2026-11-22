@@ -118,10 +118,10 @@ export function ArchitecturalCompare({
       />
 
       {/* Frosted Architectural Labels */}
-      <span className="pointer-events-none absolute left-4 top-4 z-[3] glass-photo px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.2em]">
+      <span className="pointer-events-none absolute left-4 top-4 z-[3] glass-photo px-3 py-1.5 font-mono text-[10px] font-medium uppercase tracking-[0.2em]">
         {beforeLabel}
       </span>
-      <span className="pointer-events-none absolute right-4 top-4 z-[3] glass-photo px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.2em]">
+      <span className="pointer-events-none absolute right-4 top-4 z-[3] glass-photo px-3 py-1.5 font-mono text-[10px] font-medium uppercase tracking-[0.2em]">
         {afterLabel}
       </span>
 

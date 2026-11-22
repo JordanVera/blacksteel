@@ -78,7 +78,7 @@ export function ProjectInquiryForm() {
             <p className="eyebrow-label text-[#5C5B58] dark:text-[#A7A6A3]">
               Inquiry Validated · Reference {submissionResult.referenceId}
             </p>
-            <h2 className="font-serif text-3xl">
+            <h2 className="font-display text-2xl font-semibold tracking-[-0.025em] sm:text-3xl">
               Thank you for reaching out to BLACKSTEEL.
             </h2>
           </div>
@@ -121,7 +121,7 @@ export function ProjectInquiryForm() {
         <p className="eyebrow-label text-[#5C5B58] dark:text-[#A7A6A3]">
           Project Brief
         </p>
-        <h2 className="font-serif text-3xl">Tell us about your space.</h2>
+        <h2 className="font-display text-2xl font-semibold tracking-[-0.025em] sm:text-3xl">Tell us about your space.</h2>
         <p className="text-sm text-[#34383C] dark:text-[#D8D5CF]">
           Fields marked optional are genuinely optional—share what you know
           today and we will refine the rest together.

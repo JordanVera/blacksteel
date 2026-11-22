@@ -85,7 +85,7 @@ export function PortfolioGridClient({ projects }: PortfolioGridClientProps) {
       {/* Results Grid */}
       {filtered.length === 0 ? (
         <div className="glass-surface p-12 text-center">
-          <p className="font-serif text-2xl">
+          <p className="font-display text-xl font-semibold tracking-[-0.02em]">
             No demonstration studies match that exact filter combination.
           </p>
           <button
@@ -136,7 +136,7 @@ export function PortfolioGridClient({ projects }: PortfolioGridClientProps) {
                         {project.category} · {project.neighborhood},{" "}
                         {project.city}
                       </p>
-                      <h2 className="font-serif text-3xl tracking-[-0.015em] transition-opacity group-hover:opacity-75">
+                      <h2 className="font-display text-2xl font-semibold tracking-[-0.025em] transition-opacity group-hover:opacity-75">
                         {project.name}
                       </h2>
                       <p className="max-w-[48ch] pt-1 text-sm leading-[1.68] text-[#34383C] dark:text-[#D8D5CF]">

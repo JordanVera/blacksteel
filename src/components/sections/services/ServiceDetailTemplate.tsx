@@ -66,8 +66,8 @@ export function ServiceDetailTemplate({ service }: ServiceDetailTemplateProps) {
                       key={item}
                       className="flex items-baseline gap-4 py-4 text-[15px] leading-[1.6] text-[#17191B] dark:text-[#F2F0EC]"
                     >
-                      <span className="font-serif text-lg tabular-nums text-[#5C5B58] dark:text-[#A7A6A3]">
-                        0{idx + 1}
+                      <span className="font-mono text-xs tabular-nums text-[#5C5B58] dark:text-[#A7A6A3]">
+                        [0{idx + 1}]
                       </span>
                       <span>{item}</span>
                     </li>
@@ -111,10 +111,10 @@ export function ServiceDetailTemplate({ service }: ServiceDetailTemplateProps) {
                 key={note.heading}
                 className="space-y-3 border-t border-[#17191B]/15 pt-6 dark:border-[#A7A6A3]/22"
               >
-                <span className="font-serif text-2xl tabular-nums text-[#5C5B58] dark:text-[#A7A6A3]">
-                  0{idx + 1}
+                <span className="font-mono text-xs tabular-nums text-[#5C5B58] dark:text-[#A7A6A3]">
+                  [0{idx + 1}]
                 </span>
-                <h3 className="font-serif text-2xl text-[#17191B] dark:text-[#F2F0EC]">
+                <h3 className="font-display text-xl font-semibold tracking-[-0.02em] text-[#17191B] dark:text-[#F2F0EC]">
                   {note.heading}
                 </h3>
                 <p className="text-sm leading-[1.72] text-[#34383C] dark:text-[#D8D5CF]">
@@ -135,7 +135,7 @@ export function ServiceDetailTemplate({ service }: ServiceDetailTemplateProps) {
                 <p className="eyebrow-label text-[#5C5B58] dark:text-[#A7A6A3]">
                   Reconstruction Standard
                 </p>
-                <h2 className="font-serif text-3xl text-[#17191B] dark:text-[#F2F0EC]">
+                <h2 className="font-display text-2xl font-semibold tracking-[-0.025em] text-[#17191B] dark:text-[#F2F0EC] sm:text-3xl">
                   Rebuilt beyond its original baseline.
                 </h2>
                 <p className="text-sm leading-[1.72] text-[#34383C] dark:text-[#D8D5CF]">
@@ -167,7 +167,7 @@ export function ServiceDetailTemplate({ service }: ServiceDetailTemplateProps) {
               <p className="eyebrow-label text-[#5C5B58] dark:text-[#A7A6A3]">
                 Adjacent Disciplines
               </p>
-              <h2 className="mt-2 font-serif text-3xl">Related Expertise</h2>
+              <h2 className="mt-2 font-display text-2xl font-semibold tracking-[-0.025em] sm:text-3xl">Related Expertise</h2>
             </div>
             <ActionLink href="/services" variant="underline">
               All Services
@@ -185,7 +185,7 @@ export function ServiceDetailTemplate({ service }: ServiceDetailTemplateProps) {
                   <span className="eyebrow-label text-[#5C5B58] dark:text-[#A7A6A3]">
                     {item.index} · {item.eyebrow}
                   </span>
-                  <h3 className="font-serif text-2xl text-[#17191B] dark:text-[#F2F0EC]">
+                  <h3 className="font-display text-xl font-semibold tracking-[-0.02em] text-[#17191B] dark:text-[#F2F0EC]">
                     {item.title}
                   </h3>
                   <p className="text-sm leading-[1.65] text-[#34383C] dark:text-[#D8D5CF]">

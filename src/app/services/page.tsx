@@ -72,7 +72,7 @@ export default function ServicesOverviewPage() {
                     <p className="eyebrow-label text-[#5C5B58] dark:text-[#A7A6A3]">
                       {service.eyebrow}
                     </p>
-                    <h2 className="font-serif text-4xl tracking-[-0.015em] sm:text-5xl">
+                    <h2 className="font-display text-3xl font-semibold tracking-[-0.03em] sm:text-4xl">
                       {service.title}
                     </h2>
                     <p className="max-w-[54ch] text-base leading-[1.72] text-[#34383C] dark:text-[#D8D5CF]">

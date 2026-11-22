@@ -193,7 +193,7 @@ export default async function ProjectDetailPage({
                   <p className="eyebrow-label text-[#5C5B58] dark:text-[#A7A6A3]">
                     Transformation Study
                   </p>
-                  <h2 className="mt-2 font-serif text-3xl sm:text-4xl">
+                  <h2 className="mt-2 font-display text-2xl font-semibold tracking-[-0.025em] sm:text-3xl">
                     Before &amp; After Spatial Progression
                   </h2>
                 </div>
@@ -276,7 +276,7 @@ export default async function ProjectDetailPage({
                   <p className="eyebrow-label text-[#5C5B58] dark:text-[#A7A6A3]">
                     Next Architectural Study
                   </p>
-                  <h2 className="font-serif text-4xl transition-opacity group-hover:opacity-75 sm:text-5xl">
+                  <h2 className="font-display text-3xl font-semibold tracking-[-0.03em] transition-opacity group-hover:opacity-75 sm:text-4xl">
                     {nextProject.name}
                   </h2>
                 </div>
