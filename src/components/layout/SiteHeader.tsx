@@ -117,10 +117,20 @@ export function SiteHeader() {
           >
             <span className="site-header-logo" aria-hidden="true">
               <span className="site-header-logo-white">
-                <BrandLogo surface="dark" priority className="h-full w-full" />
+                <BrandLogo
+                  surface="dark"
+                  priority
+                  linked={false}
+                  className="h-full w-full"
+                />
               </span>
               <span className="site-header-logo-black" aria-hidden="true">
-                <BrandLogo surface="light" priority className="h-full w-full" />
+                <BrandLogo
+                  surface="light"
+                  priority
+                  linked={false}
+                  className="h-full w-full"
+                />
               </span>
             </span>
           </Link>

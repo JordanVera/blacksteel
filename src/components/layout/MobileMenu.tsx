@@ -52,14 +52,11 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
           className="fixed inset-0 z-50 flex flex-col justify-between bg-[#F2F0EC]/92 text-[#17191B] backdrop-blur-2xl dark:bg-[#17191B]/92 dark:text-[#F2F0EC]"
         >
           <div className="flex items-center justify-between border-b border-[#17191B]/12 px-6 py-5 dark:border-[#A7A6A3]/20">
-            <Link
-              href="/"
+            <BrandLogo
+              surface="auto"
+              className="h-9 w-auto"
               onClick={onClose}
-              aria-label="BLACKSTEEL Home"
-              className="inline-flex items-center"
-            >
-              <BrandLogo surface="auto" className="h-9 w-auto" />
-            </Link>
+            />
 
             <div className="flex items-center gap-3">
               <ThemeToggle showLabel />

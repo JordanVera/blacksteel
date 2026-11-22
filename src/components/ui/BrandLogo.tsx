@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 interface BrandLogoProps {
@@ -12,6 +13,10 @@ interface BrandLogoProps {
   className?: string;
   priority?: boolean;
   sizes?: string;
+  /** Wrap the logo in a link to the home page. Default true; set false when an ancestor already links home. */
+  linked?: boolean;
+  onClick?: () => void;
+  linkClassName?: string;
 }
 
 const INTRINSIC_WIDTH = 2104;
@@ -23,9 +28,30 @@ export function BrandLogo({
   className,
   priority = false,
   sizes = "(max-width: 768px) 156px, 196px",
+  linked = true,
+  onClick,
+  linkClassName,
 }: BrandLogoProps) {
-  if (surface === "dark") {
+  const imageClassName = cn("h-auto w-auto object-contain select-none", className);
+
+  const wrap = (content: React.ReactNode) => {
+    if (!linked) {
+      return content;
+    }
     return (
+      <Link
+        href="/"
+        aria-label={`${LOGO_ALT} — Home`}
+        onClick={onClick}
+        className={cn("inline-flex items-center", linkClassName)}
+      >
+        {content}
+      </Link>
+    );
+  };
+
+  if (surface === "dark") {
+    return wrap(
       <Image
         src="/brand/logo-white.png"
         alt={LOGO_ALT}
@@ -33,13 +59,13 @@ export function BrandLogo({
         height={INTRINSIC_HEIGHT}
         priority={priority}
         sizes={sizes}
-        className={cn("h-auto w-auto object-contain select-none", className)}
+        className={imageClassName}
       />
     );
   }
 
   if (surface === "light") {
-    return (
+    return wrap(
       <Image
         src="/brand/logo-black.png"
         alt={LOGO_ALT}
@@ -47,12 +73,12 @@ export function BrandLogo({
         height={INTRINSIC_HEIGHT}
         priority={priority}
         sizes={sizes}
-        className={cn("h-auto w-auto object-contain select-none", className)}
+        className={imageClassName}
       />
     );
   }
 
-  return (
+  return wrap(
     <span className="relative inline-flex items-center">
       <Image
         src="/brand/logo-white.png"
@@ -61,10 +87,7 @@ export function BrandLogo({
         height={INTRINSIC_HEIGHT}
         priority={priority}
         sizes={sizes}
-        className={cn(
-          "hidden dark:block h-auto w-auto object-contain select-none",
-          className
-        )}
+        className={cn("hidden dark:block", imageClassName)}
       />
       <Image
         src="/brand/logo-black.png"
@@ -73,10 +96,7 @@ export function BrandLogo({
         height={INTRINSIC_HEIGHT}
         priority={priority}
         sizes={sizes}
-        className={cn(
-          "block dark:hidden h-auto w-auto object-contain select-none",
-          className
-        )}
+        className={cn("block dark:hidden", imageClassName)}
       />
     </span>
   );

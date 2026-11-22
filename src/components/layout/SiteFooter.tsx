@@ -1,8 +1,8 @@
-import Link from "next/link";
-import { FOOTER_COLUMNS, SITE_CONFIG } from "@/content/site";
-import { BrandLogo } from "@/components/ui/BrandLogo";
-import { Container } from "@/components/layout/Container";
-import { ThemeToggle } from "@/components/layout/ThemeToggle";
+import Link from 'next/link';
+import { FOOTER_COLUMNS, SITE_CONFIG } from '@/content/site';
+import { BrandLogo } from '@/components/ui/BrandLogo';
+import { Container } from '@/components/layout/Container';
+import { ThemeToggle } from '@/components/layout/ThemeToggle';
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
@@ -13,13 +13,11 @@ export function SiteFooter() {
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-10">
           <div className="flex flex-col justify-between gap-8 lg:col-span-5">
             <div className="space-y-6">
-              <Link
-                href="/"
-                aria-label="BLACKSTEEL Construction & Remodeling"
-                className="inline-block"
-              >
-                <BrandLogo surface="dark" className="h-12 w-auto sm:h-14" />
-              </Link>
+              <BrandLogo
+                surface="dark"
+                className="h-12 w-auto sm:h-14"
+                linkClassName="inline-block"
+              />
               <p className="max-w-md text-sm leading-[1.7] text-[#D8D5CF]">
                 A family-owned construction and remodeling practice led by two
                 siblings, crafting architectural residential interiors, custom
