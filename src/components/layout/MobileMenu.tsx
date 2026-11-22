@@ -93,25 +93,25 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
                         ease: [0.22, 1, 0.36, 1],
                       }}
                     >
-                      <Link
-                        href={item.href}
-                        onClick={onClose}
-                        className="group flex items-baseline justify-between py-5"
-                      >
-                        <div className="flex items-baseline gap-4">
-                          <span className="tabular-nums text-[11px] tracking-[0.2em] text-[#5C5B58] dark:text-[#A7A6A3]">
-                            0{index + 1}
-                          </span>
-                          <span
-                            className={`font-serif text-4xl tracking-[-0.02em] transition-opacity ${
-                              isActive
-                                ? "opacity-100 underline decoration-[#17191B]/35 underline-offset-8 dark:decoration-[#F2F0EC]/40"
-                                : "opacity-85 group-hover:opacity-100"
-                            }`}
-                          >
-                            {item.label}
-                          </span>
-                        </div>
+                    <Link
+                      href={item.href}
+                      onClick={onClose}
+                      className="group flex items-baseline justify-between py-5"
+                    >
+                      <div className="flex items-baseline gap-4">
+                        <span className="font-mono tabular-nums text-[11px] tracking-[0.2em] text-[#5C5B58] dark:text-[#A7A6A3]">
+                          [0{index + 1}]
+                        </span>
+                        <span
+                          className={`font-display text-3xl font-semibold tracking-[-0.03em] transition-opacity sm:text-4xl ${
+                            isActive
+                              ? "opacity-100 underline decoration-[#17191B]/35 underline-offset-8 dark:decoration-[#F2F0EC]/40"
+                              : "opacity-85 group-hover:opacity-100"
+                          }`}
+                        >
+                          {item.label}
+                        </span>
+                      </div>
                         <ArrowUpRight
                           className="h-4 w-4 opacity-50 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100"
                           aria-hidden="true"

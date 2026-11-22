@@ -78,7 +78,7 @@ export function LocationLandingTemplate({
                   <p className="eyebrow-label text-[#5C5B58] dark:text-[#A7A6A3]">
                     Service Area Coverage
                   </p>
-                  <h2 className="mt-2 font-serif text-2xl">
+                  <h2 className="mt-2 font-display text-2xl font-semibold tracking-[-0.025em]">
                     Communities We Serve
                   </h2>
                 </div>
@@ -121,10 +121,10 @@ export function LocationLandingTemplate({
                 key={item.title}
                 className="space-y-3 border-t border-[#17191B]/14 pt-6 dark:border-[#A7A6A3]/22"
               >
-                <span className="font-serif text-2xl tabular-nums text-[#5C5B58] dark:text-[#A7A6A3]">
-                  0{idx + 1}
+                <span className="font-mono text-xs tabular-nums text-[#5C5B58] dark:text-[#A7A6A3]">
+                  [0{idx + 1}]
                 </span>
-                <h3 className="font-serif text-2xl text-[#17191B] dark:text-[#F2F0EC]">
+                <h3 className="font-display text-xl font-semibold tracking-[-0.02em] text-[#17191B] dark:text-[#F2F0EC]">
                   {item.title}
                 </h3>
                 <p className="text-sm leading-[1.72] text-[#34383C] dark:text-[#D8D5CF]">
@@ -144,7 +144,7 @@ export function LocationLandingTemplate({
                 <p className="eyebrow-label text-[#5C5B58] dark:text-[#A7A6A3]">
                   Regional Demonstration Studies
                 </p>
-                <h2 className="mt-2 font-serif text-3xl sm:text-4xl">
+                <h2 className="mt-2 font-display text-2xl font-semibold tracking-[-0.025em] sm:text-3xl">
                   {market.city} Architectural Studies
                 </h2>
               </div>
@@ -180,7 +180,7 @@ export function LocationLandingTemplate({
                         <p className="eyebrow-label text-[#5C5B58] dark:text-[#A7A6A3]">
                           {study.category}
                         </p>
-                        <h3 className="mt-1 font-serif text-2xl group-hover:opacity-75">
+                        <h3 className="mt-1 font-display text-xl font-semibold tracking-[-0.02em] group-hover:opacity-75">
                           {study.name}
                         </h3>
                       </div>

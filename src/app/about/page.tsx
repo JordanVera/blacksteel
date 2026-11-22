@@ -126,10 +126,10 @@ export default function AboutPage() {
                 key={item.index}
                 className="space-y-3 border-t border-[#17191B]/14 pt-6 dark:border-[#A7A6A3]/22"
               >
-                <span className="font-serif text-2xl tabular-nums text-[#5C5B58] dark:text-[#A7A6A3]">
-                  {item.index}
+                <span className="font-mono text-xs tabular-nums text-[#5C5B58] dark:text-[#A7A6A3]">
+                  [{item.index}]
                 </span>
-                <h2 className="font-serif text-2xl">{item.title}</h2>
+                <h2 className="font-display text-xl font-semibold tracking-[-0.02em]">{item.title}</h2>
                 <p className="text-sm leading-[1.72] text-[#34383C] dark:text-[#D8D5CF]">
                   {item.body}
                 </p>
@@ -160,7 +160,7 @@ export default function AboutPage() {
               <p className="eyebrow-label text-[#5C5B58] dark:text-[#A7A6A3]">
                 Co-Founder &amp; Principal · [Name Pending Confirmation]
               </p>
-              <h3 className="font-serif text-3xl">
+              <h3 className="font-display text-2xl font-semibold tracking-[-0.025em]">
                 Construction Operations &amp; Field Execution
               </h3>
               <p className="text-sm leading-[1.72] text-[#34383C] dark:text-[#D8D5CF]">
@@ -174,7 +174,7 @@ export default function AboutPage() {
               <p className="eyebrow-label text-[#5C5B58] dark:text-[#A7A6A3]">
                 Co-Founder &amp; Principal · [Name Pending Confirmation]
               </p>
-              <h3 className="font-serif text-3xl">
+              <h3 className="font-display text-2xl font-semibold tracking-[-0.025em]">
                 Pre-Construction, Client Experience &amp; Design Coordination
               </h3>
               <p className="text-sm leading-[1.72] text-[#34383C] dark:text-[#D8D5CF]">

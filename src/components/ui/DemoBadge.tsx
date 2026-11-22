@@ -14,7 +14,7 @@ export function DemoBadge({
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-2 px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.18em]",
+        "inline-flex items-center gap-2 font-mono px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.18em]",
         variant === "photo" && "glass-photo text-[#F2F0EC]/90",
         variant === "surface" &&
           "border border-[#17191B]/18 bg-[#F2F0EC]/70 text-[#5C5B58] backdrop-blur-sm dark:border-[#A7A6A3]/25 dark:bg-[#17191B]/70 dark:text-[#A7A6A3]",

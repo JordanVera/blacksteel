@@ -42,7 +42,7 @@ export function EditorialHeading({
       >
         {index ? (
           <>
-            <span className="tabular-nums font-medium">{index}</span>
+            <span className="font-mono tabular-nums font-medium">[{index}]</span>
             <span
               aria-hidden="true"
               className={cn(

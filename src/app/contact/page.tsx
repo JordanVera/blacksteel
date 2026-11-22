@@ -52,11 +52,11 @@ export default function ContactPage() {
                     },
                   ].map((item) => (
                     <li key={item.step} className="flex gap-5 py-5">
-                      <span className="font-serif text-2xl tabular-nums text-[#5C5B58] dark:text-[#A7A6A3]">
-                        {item.step}
+                      <span className="font-mono text-sm tabular-nums text-[#5C5B58] dark:text-[#A7A6A3]">
+                        [{item.step}]
                       </span>
                       <div className="space-y-1">
-                        <h2 className="font-serif text-xl">{item.title}</h2>
+                        <h2 className="font-display text-lg font-semibold tracking-[-0.02em]">{item.title}</h2>
                         <p className="text-sm leading-[1.68] text-[#34383C] dark:text-[#D8D5CF]">
                           {item.body}
                         </p>

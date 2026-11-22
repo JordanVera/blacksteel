@@ -1,27 +1,33 @@
-import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Manrope } from "next/font/google";
-import type { ReactNode } from "react";
-import { SITE_NAME, SITE_URL, buildOrganizationJsonLd } from "@/lib/seo";
-import { TRPCReactProvider } from "@/server/trpc/client";
-import { ThemeProvider } from "@/components/layout/ThemeProvider";
-import { MotionProvider } from "@/components/motion/MotionProvider";
-import { SiteHeader } from "@/components/layout/SiteHeader";
-import { SiteFooter } from "@/components/layout/SiteFooter";
-import "./globals.css";
+import type { Metadata, Viewport } from 'next';
+import { JetBrains_Mono, Manrope, Syne } from 'next/font/google';
+import type { ReactNode } from 'react';
+import { SITE_NAME, SITE_URL, buildOrganizationJsonLd } from '@/lib/seo';
+import { TRPCReactProvider } from '@/server/trpc/client';
+import { ThemeProvider } from '@/components/layout/ThemeProvider';
+import { MotionProvider } from '@/components/motion/MotionProvider';
+import { SiteHeader } from '@/components/layout/SiteHeader';
+import { SiteFooter } from '@/components/layout/SiteFooter';
+import './globals.css';
 
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  style: ["normal", "italic"],
-  variable: "--font-cormorant",
-  display: "swap",
+const syne = Syne({
+  subsets: ['latin'],
+  weight: ['500', '600', '700'],
+  variable: '--font-syne',
+  display: 'swap',
 });
 
 const manrope = Manrope({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
-  variable: "--font-manrope",
-  display: "swap",
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600'],
+  variable: '--font-manrope',
+  display: 'swap',
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-jetbrains-mono',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -31,27 +37,27 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description:
-    "Family-owned luxury residential remodeling, custom cabinetry and architectural millwork, structural construction, general contracting, and property restoration in Houston and Austin, Texas.",
+    'Family-owned luxury residential remodeling, custom cabinetry and architectural millwork, structural construction, general contracting, and property restoration in Houston and Austin, Texas.',
   openGraph: {
-    type: "website",
-    locale: "en_US",
+    type: 'website',
+    locale: 'en_US',
     siteName: SITE_NAME,
     title: `${SITE_NAME} | Built Beyond Ordinary.`,
     description:
-      "Design-conscious residential remodeling, bespoke millwork, and architectural construction serving Houston and Austin, Texas.",
+      'Design-conscious residential remodeling, bespoke millwork, and architectural construction serving Houston and Austin, Texas.',
   },
   twitter: {
-    card: "summary_large_image",
+    card: 'summary_large_image',
     title: `${SITE_NAME} | Built Beyond Ordinary.`,
     description:
-      "Design-conscious residential remodeling, bespoke millwork, and architectural construction serving Houston and Austin, Texas.",
+      'Design-conscious residential remodeling, bespoke millwork, and architectural construction serving Houston and Austin, Texas.',
   },
 };
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: "#17191B" },
-    { media: "(prefers-color-scheme: light)", color: "#F2F0EC" },
+    { media: '(prefers-color-scheme: dark)', color: '#17191B' },
+    { media: '(prefers-color-scheme: light)', color: '#F2F0EC' },
   ],
 };
 
@@ -67,7 +73,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html
       lang="en"
-      className={`dark ${cormorant.variable} ${manrope.variable}`}
+      className={`dark ${syne.variable} ${manrope.variable} ${jetbrainsMono.variable}`}
       suppressHydrationWarning
     >
       <head>

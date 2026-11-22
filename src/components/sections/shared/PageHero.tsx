@@ -72,10 +72,10 @@ export function PageHero({
           ) : null}
 
           <div className="flex flex-wrap items-center gap-3">
-            <span className="glass-photo inline-flex items-center gap-3 px-3.5 py-1.5 text-[10px] font-medium uppercase tracking-[0.2em]">
+            <span className="glass-photo inline-flex items-center gap-3 px-3.5 py-1.5 font-mono text-[10px] font-medium uppercase tracking-[0.2em]">
               {index ? (
                 <>
-                  <span className="tabular-nums text-[#A7A6A3]">{index}</span>
+                  <span className="tabular-nums text-[#A7A6A3]">[{index}]</span>
                   <span aria-hidden="true" className="h-px w-4 bg-[#F2F0EC]/35" />
                 </>
               ) : null}
@@ -99,7 +99,7 @@ export function PageHero({
   }
 
   return (
-    <section className="border-b border-[#17191B]/12 bg-[#F2F0EC] pb-16 pt-36 text-[#17191B] sm:pb-20 sm:pt-44 dark:border-[#A7A6A3]/20 dark:bg-[#17191B] dark:text-[#F2F0EC]">
+    <section className="relative overflow-hidden border-b border-[#17191B]/12 bg-[#F2F0EC] bg-arch-grid pb-16 pt-36 text-[#17191B] sm:pb-20 sm:pt-44 dark:border-[#A7A6A3]/20 dark:bg-[#17191B] dark:text-[#F2F0EC]">
       <Container>
         {breadcrumbs && breadcrumbs.length > 0 ? (
           <nav

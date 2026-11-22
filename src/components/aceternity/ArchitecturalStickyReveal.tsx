@@ -69,18 +69,18 @@ export function ArchitecturalStickyReveal({
                     <div className="flex items-baseline gap-6">
                       <span
                         className={cn(
-                          "font-serif text-3xl tabular-nums transition-colors duration-300",
+                          "font-mono text-sm tabular-nums transition-colors duration-300",
                           isActive
                             ? "text-[#17191B] dark:text-[#F2F0EC]"
                             : "text-[#5C5B58] dark:text-[#A7A6A3]"
                         )}
                       >
-                        {stage.number}
+                        [{stage.number}]
                       </span>
 
                       <div className="flex-1 space-y-3">
                         <div className="flex items-center justify-between gap-4">
-                          <h3 className="font-serif text-3xl tracking-[-0.015em] text-[#17191B] dark:text-[#F2F0EC]">
+                          <h3 className="font-display text-2xl font-semibold tracking-[-0.025em] text-[#17191B] dark:text-[#F2F0EC] sm:text-3xl">
                             {stage.title}
                           </h3>
                           <span className="eyebrow-label text-[#5C5B58] dark:text-[#A7A6A3]">
@@ -187,15 +187,15 @@ export function ArchitecturalStickyReveal({
             >
               <div className="space-y-5">
                 <div className="flex items-baseline justify-between gap-4">
-                  <span className="font-serif text-3xl tabular-nums text-[#5C5B58] dark:text-[#A7A6A3]">
-                    {stage.number}
+                  <span className="font-mono text-sm tabular-nums text-[#5C5B58] dark:text-[#A7A6A3]">
+                    [{stage.number}]
                   </span>
                   <span className="eyebrow-label text-[#5C5B58] dark:text-[#A7A6A3]">
                     {stage.subtitle}
                   </span>
                 </div>
 
-                <h3 className="font-serif text-3xl text-[#17191B] dark:text-[#F2F0EC]">
+                <h3 className="font-display text-2xl font-semibold tracking-[-0.025em] text-[#17191B] dark:text-[#F2F0EC]">
                   {stage.title}
                 </h3>
 

@@ -66,8 +66,8 @@ export function SiteHeader() {
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    "relative py-1 text-[11px] font-medium uppercase tracking-[0.2em] transition-opacity duration-200",
-                    isActive ? "opacity-100" : "opacity-75 hover:opacity-100"
+                    "relative py-1 font-mono text-[11px] font-medium uppercase tracking-[0.2em] transition-opacity duration-200",
+                    isActive ? "opacity-100" : "opacity-70 hover:opacity-100"
                   )}
                 >
                   {item.label}

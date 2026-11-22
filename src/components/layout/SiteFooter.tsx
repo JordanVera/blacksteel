@@ -8,7 +8,7 @@ export function SiteFooter() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-[#A7A6A3]/20 bg-[#17191B] text-[#F2F0EC]">
+    <footer className="relative overflow-hidden border-t border-[#A7A6A3]/20 bg-[#17191B] bg-arch-grid-dark text-[#F2F0EC]">
       <Container className="py-20 lg:py-24">
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-10">
           <div className="flex flex-col justify-between gap-8 lg:col-span-5">
@@ -27,7 +27,7 @@ export function SiteFooter() {
               </p>
             </div>
 
-            <div className="space-y-2 border-l border-[#A7A6A3]/30 pl-4 text-xs text-[#A7A6A3]">
+            <div className="space-y-2 border-l border-[#A7A6A3]/30 pl-4 font-mono text-[11px] text-[#A7A6A3]">
               <p className="uppercase tracking-[0.18em] text-[#F2F0EC]/85">
                 {SITE_CONFIG.contactPlaceholders.marketsLabel}
               </p>
