@@ -18,7 +18,8 @@ interface SectionShellProps {
 const SURFACE_CLASSES: Record<SectionSurface, string> = {
   canvas: "bg-[#F2F0EC] text-[#17191B] dark:bg-[#17191B] dark:text-[#F2F0EC]",
   elevated: "bg-[#E8E5DF] text-[#17191B] dark:bg-[#34383C] dark:text-[#F2F0EC]",
-  contrast: "bg-[#17191B] text-[#F2F0EC] dark:bg-[#F2F0EC] dark:text-[#17191B]",
+  contrast:
+    "bg-[#E8E5DF] text-[#17191B] dark:bg-[#F2F0EC] dark:text-[#17191B]",
   obsidian: "bg-[#17191B] text-[#F2F0EC]",
 };
 

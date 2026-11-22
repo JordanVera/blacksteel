@@ -1,25 +1,25 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import Link from "next/link";
-import { ArrowDown, ArrowUpRight } from "lucide-react";
-import { motion } from "motion/react";
-import { getMediaAsset } from "@/content/media";
-import { Container } from "@/components/layout/Container";
-import { SpotlightBeams } from "@/components/aceternity/SpotlightBeams";
-import { ContainerScrollStage } from "@/components/aceternity/ContainerScrollStage";
-import { FlipWords } from "@/components/aceternity/FlipWords";
-import { MovingBorderButton } from "@/components/aceternity/MovingBorderButton";
+import Image from 'next/image';
+import Link from 'next/link';
+import { ArrowDown, ArrowUpRight } from 'lucide-react';
+import { motion } from 'motion/react';
+import { getMediaAsset } from '@/content/media';
+import { Container } from '@/components/layout/Container';
+import { SpotlightBeams } from '@/components/aceternity/SpotlightBeams';
+import { ContainerScrollStage } from '@/components/aceternity/ContainerScrollStage';
+import { FlipWords } from '@/components/aceternity/FlipWords';
+import { MovingBorderButton } from '@/components/aceternity/MovingBorderButton';
 
 const HERO_DISCIPLINES = [
-  "Structural Precision.",
-  "Bespoke Millwork.",
-  "Architectural Permanence.",
-  "Complex Remodeling.",
+  'Structural Precision.',
+  'Bespoke Millwork.',
+  'Architectural Permanence.',
+  'Complex Remodeling.',
 ];
 
 export function HeroSection() {
-  const heroMedia = getMediaAsset("residence-pavilion");
+  const heroMedia = getMediaAsset('residence-pavilion');
 
   return (
     <section
@@ -58,7 +58,11 @@ export function HeroSection() {
             <motion.h1
               initial={{ opacity: 0, y: 26 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.75, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+              transition={{
+                duration: 0.75,
+                delay: 0.1,
+                ease: [0.22, 1, 0.36, 1],
+              }}
               className="display-hero text-[#F2F0EC]"
             >
               Built Beyond
@@ -71,12 +75,14 @@ export function HeroSection() {
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
+              transition={{
+                duration: 0.7,
+                delay: 0.22,
+                ease: [0.22, 1, 0.36, 1],
+              }}
               className="flex flex-wrap items-baseline gap-x-2.5 gap-y-1 text-base text-[#D8D5CF] sm:text-xl"
             >
-              <span className="font-light text-[#A7A6A3]">
-                Engineered for{" "}
-              </span>
+              <span className="font-light text-[#A7A6A3]">Engineered for </span>
               <FlipWords
                 words={HERO_DISCIPLINES}
                 className="font-display font-semibold tracking-[-0.02em] text-[#F2F0EC]"
@@ -86,7 +92,11 @@ export function HeroSection() {
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.32, ease: [0.22, 1, 0.36, 1] }}
+              transition={{
+                duration: 0.7,
+                delay: 0.32,
+                ease: [0.22, 1, 0.36, 1],
+              }}
               className="flex flex-col gap-3.5 pt-2 sm:flex-row sm:items-center"
             >
               <MovingBorderButton href="/contact" variant="ivory">
@@ -114,7 +124,11 @@ export function HeroSection() {
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.75, delay: 0.38, ease: [0.22, 1, 0.36, 1] }}
+            transition={{
+              duration: 0.75,
+              delay: 0.38,
+              ease: [0.22, 1, 0.36, 1],
+            }}
             className="lg:col-span-4"
           >
             <div className="glass-steel arch-crosshair p-5 sm:p-6">

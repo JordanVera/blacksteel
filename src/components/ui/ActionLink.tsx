@@ -37,9 +37,9 @@ export function ActionLink({
         variant === "underline" &&
           "border-b border-[#17191B]/35 pb-1.5 text-[#17191B] hover:border-[#17191B] dark:border-[#F2F0EC]/35 dark:text-[#F2F0EC] dark:hover:border-[#F2F0EC]",
         variant === "contrast-primary" &&
-          "border border-[#F2F0EC] bg-[#F2F0EC] px-7 py-4 text-[#17191B] hover:bg-[#D8D5CF] dark:border-[#17191B] dark:bg-[#17191B] dark:text-[#F2F0EC] dark:hover:bg-[#34383C]",
+          "border border-[#17191B] bg-[#17191B] px-7 py-4 text-[#F2F0EC] hover:bg-[#34383C] hover:border-[#34383C]",
         variant === "contrast-underline" &&
-          "border-b border-[#F2F0EC]/35 pb-1.5 text-[#F2F0EC] hover:border-[#F2F0EC] dark:border-[#17191B]/35 dark:text-[#17191B] dark:hover:border-[#17191B]",
+          "border-b border-[#17191B]/35 pb-1.5 text-[#17191B] hover:border-[#17191B]",
         className
       )}
     >

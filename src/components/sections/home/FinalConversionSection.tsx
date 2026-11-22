@@ -1,8 +1,8 @@
-import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
-import { Container } from "@/components/layout/Container";
-import { ArchitecturalLamp } from "@/components/aceternity/ArchitecturalLamp";
-import { MovingBorderButton } from "@/components/aceternity/MovingBorderButton";
+import Link from 'next/link';
+import { ArrowUpRight } from 'lucide-react';
+import { Container } from '@/components/layout/Container';
+import { ArchitecturalLamp } from '@/components/aceternity/ArchitecturalLamp';
+import { MovingBorderButton } from '@/components/aceternity/MovingBorderButton';
 
 export function FinalConversionSection() {
   return (
@@ -17,15 +17,12 @@ export function FinalConversionSection() {
             <div className="mx-auto flex max-w-2xl flex-col items-center space-y-7">
               <div className="flex items-center gap-3 eyebrow-label text-[#A7A6A3]">
                 <span className="tabular-nums">[08]</span>
-                <span
-                  aria-hidden="true"
-                  className="h-px w-6 bg-[#A7A6A3]/45"
-                />
+                <span aria-hidden="true" className="h-px w-6 bg-[#A7A6A3]/45" />
                 <span>Initiate Consultation</span>
               </div>
 
               <h2 className="display-statement text-[#F2F0EC]">
-                Let&apos;s Build Something{" "}
+                Let&apos;s Build Something{' '}
                 <span className="bg-gradient-to-r from-[#F2F0EC] via-[#D8D5CF] to-[#A7A6A3] bg-clip-text text-transparent">
                   Unmistakable.
                 </span>

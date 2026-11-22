@@ -121,7 +121,7 @@ export function CraftDetailsSection() {
           </RevealMask>
 
           <RevealMask delay={0.1} className="lg:col-span-5">
-            <p className="max-w-[48ch] text-base leading-[1.72] text-[#D8D5CF] dark:text-[#34383C]">
+            <p className="max-w-[48ch] text-base leading-[1.72] text-[#34383C]">
               Move the optical loupe across our finish studies or drag through
               the architectural material board deck to explore the tactile
               palette defining BLACKSTEEL interiors.
@@ -153,8 +153,8 @@ export function CraftDetailsSection() {
                       className={cn(
                         "border px-3.5 py-2 font-mono text-[10px] uppercase tracking-[0.18em] transition-colors cursor-pointer",
                         isActive
-                          ? "border-[#F2F0EC] bg-[#F2F0EC] text-[#17191B] dark:border-[#17191B] dark:bg-[#17191B] dark:text-[#F2F0EC]"
-                          : "border-[#A7A6A3]/35 text-[#D8D5CF] hover:border-[#F2F0EC] dark:border-[#17191B]/25 dark:text-[#34383C] dark:hover:border-[#17191B]"
+                          ? "border-[#17191B] bg-[#17191B] text-[#F2F0EC]"
+                          : "border-[#17191B]/22 text-[#34383C] hover:border-[#17191B]"
                       )}
                     >
                       [{study.index}] {study.tabLabel}
@@ -163,7 +163,7 @@ export function CraftDetailsSection() {
                 })}
               </div>
 
-              <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#A7A6A3] dark:text-[#5C5B58]">
+              <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#5C5B58]">
                 {activeLens.tolerance}
               </span>
             </div>
@@ -184,16 +184,16 @@ export function CraftDetailsSection() {
               </div>
             </ArchitecturalLens>
 
-            <div className="flex flex-col justify-between gap-3 border-t border-[#A7A6A3]/25 pt-4 dark:border-[#17191B]/16 sm:flex-row sm:items-start">
+            <div className="flex flex-col justify-between gap-3 border-t border-[#17191B]/14 pt-4 sm:flex-row sm:items-start">
               <div>
-                <h3 className="font-display text-xl font-semibold tracking-[-0.02em] text-[#F2F0EC] dark:text-[#17191B]">
+                <h3 className="font-display text-xl font-semibold tracking-[-0.02em] text-[#17191B]">
                   {activeLens.title}
                 </h3>
-                <p className="mt-1.5 max-w-[54ch] text-sm leading-[1.68] text-[#D8D5CF] dark:text-[#34383C]">
+                <p className="mt-1.5 max-w-[54ch] text-sm leading-[1.68] text-[#34383C]">
                   {activeLens.description}
                 </p>
               </div>
-              <span className="shrink-0 font-mono text-[10px] uppercase tracking-[0.18em] text-[#A7A6A3] dark:text-[#5C5B58]">
+              <span className="shrink-0 font-mono text-[10px] uppercase tracking-[0.18em] text-[#5C5B58]">
                 Hover Image to Magnify
               </span>
             </div>
@@ -206,20 +206,20 @@ export function CraftDetailsSection() {
         </div>
 
         {/* Interactive Spatial Comparison Study */}
-        <div className="mt-16 grid grid-cols-1 items-center gap-10 border-t border-[#A7A6A3]/25 pt-14 dark:border-[#17191B]/16 lg:mt-20 lg:grid-cols-12 lg:gap-14">
+        <div className="mt-16 grid grid-cols-1 items-center gap-10 border-t border-[#17191B]/14 pt-14 lg:mt-20 lg:grid-cols-12 lg:gap-14">
           <RevealMask className="space-y-5 lg:col-span-4">
-            <span className="eyebrow-label text-[#A7A6A3] dark:text-[#5C5B58]">
+            <span className="eyebrow-label text-[#5C5B58]">
               Interactive Compare · Drag or Arrow Keys
             </span>
-            <h3 className="font-display text-3xl font-semibold leading-[1.06] tracking-[-0.03em] text-[#F2F0EC] dark:text-[#17191B] sm:text-4xl">
+            <h3 className="font-display text-3xl font-semibold leading-[1.06] tracking-[-0.03em] text-[#17191B] sm:text-4xl">
               From structural shell to finished architecture.
             </h3>
-            <p className="text-sm leading-[1.72] text-[#D8D5CF] dark:text-[#34383C]">
+            <p className="text-sm leading-[1.72] text-[#34383C]">
               Every finished interior relies on the discipline of what happens
               beneath and before it—plumb framing, concealed steel spans, stone
               layout, and integrated millwork engineering.
             </p>
-            <p className="border-l border-[#A7A6A3]/35 pl-3.5 font-mono text-[11px] leading-[1.65] text-[#A7A6A3] dark:border-[#17191B]/25 dark:text-[#5C5B58]">
+            <p className="border-l border-[#17191B]/22 pl-3.5 font-mono text-[11px] leading-[1.65] text-[#5C5B58]">
               Illustrative spatial comparison pairing demonstration
               architectural photography. Commissioned BLACKSTEEL before/after
               documentation will replace these visuals.

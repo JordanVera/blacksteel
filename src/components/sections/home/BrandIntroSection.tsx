@@ -54,7 +54,7 @@ export function BrandIntroSection() {
             <ArchitecturalRule tone="contrast" delay={0.08} />
 
             <RevealMask delay={0.12} className="space-y-5">
-              <p className="max-w-[58ch] text-base leading-[1.75] text-[#D8D5CF] dark:text-[#34383C] sm:text-[17px]">
+              <p className="max-w-[58ch] text-base leading-[1.75] text-[#34383C] sm:text-[17px]">
                 BLACKSTEEL Construction &amp; Remodeling partners with
                 discerning homeowners, architects, interior designers, and
                 property owners across Houston and Austin. Every renovation is
@@ -63,7 +63,7 @@ export function BrandIntroSection() {
                 stone.
               </p>
 
-              <p className="max-w-[58ch] text-base leading-[1.75] text-[#D8D5CF] dark:text-[#34383C] sm:text-[17px]">
+              <p className="max-w-[58ch] text-base leading-[1.75] text-[#34383C] sm:text-[17px]">
                 We are neither a volume builder nor a generic remodeling crew.
                 We accept a focused roster of commissions so principal oversight
                 never gets delegated away.
@@ -75,17 +75,17 @@ export function BrandIntroSection() {
                 {PILLAR_VALUES.map((item) => (
                   <div
                     key={item.code}
-                    className="arch-crosshair border border-[#A7A6A3]/25 bg-[#17191B]/45 p-5 dark:border-[#17191B]/16 dark:bg-[#F2F0EC]/70"
+                    className="arch-crosshair border border-[#17191B]/14 bg-[#F2F0EC]/75 p-5 dark:border-[#17191B]/16 dark:bg-[#E8E5DF]/90"
                   >
                     <dt className="space-y-2">
-                      <span className="block font-mono text-[10px] tracking-[0.2em] text-[#A7A6A3] dark:text-[#5C5B58]">
+                      <span className="block font-mono text-[10px] tracking-[0.2em] text-[#5C5B58]">
                         [{item.code}]
                       </span>
-                      <span className="block font-display text-base font-semibold tracking-[-0.02em] text-[#F2F0EC] dark:text-[#17191B]">
+                      <span className="block font-display text-base font-semibold tracking-[-0.02em] text-[#17191B]">
                         {item.title}
                       </span>
                     </dt>
-                    <dd className="mt-2.5 text-xs leading-[1.68] text-[#D8D5CF]/90 dark:text-[#34383C]">
+                    <dd className="mt-2.5 text-xs leading-[1.68] text-[#34383C]">
                       {item.detail}
                     </dd>
                   </div>
@@ -101,7 +101,7 @@ export function BrandIntroSection() {
           </div>
 
           <RevealMask delay={0.14} className="lg:col-span-5">
-            <figure className="arch-crosshair relative h-full min-h-[460px] w-full overflow-hidden border border-[#A7A6A3]/25 bg-[#34383C] dark:border-[#17191B]/16 lg:min-h-[640px]">
+            <figure className="arch-crosshair relative h-full min-h-[460px] w-full overflow-hidden border border-[#17191B]/14 bg-[#34383C] dark:border-[#17191B]/16 lg:min-h-[640px]">
               <Image
                 src={studioMedia.src}
                 alt={studioMedia.alt}

@@ -61,7 +61,7 @@ export function DraggableMaterialDeck({
   return (
     <div className={cn("flex flex-col gap-5", className)}>
       <div className="flex items-center justify-between gap-4">
-        <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-[#A7A6A3] dark:text-[#5C5B58]">
+        <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-[#5C5B58]">
           <Move className="h-3.5 w-3.5" aria-hidden="true" />
           <span>Drag or Cycle Material Boards</span>
         </div>
@@ -70,7 +70,7 @@ export function DraggableMaterialDeck({
           <button
             type="button"
             onClick={sendTopToBack}
-            className="border border-[#A7A6A3]/35 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.18em] text-[#F2F0EC] transition-colors hover:border-[#F2F0EC] hover:bg-[#F2F0EC] hover:text-[#17191B] dark:border-[#17191B]/25 dark:text-[#17191B] dark:hover:border-[#17191B] dark:hover:bg-[#17191B] dark:hover:text-[#F2F0EC] cursor-pointer"
+            className="border border-[#17191B]/22 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.18em] text-[#17191B] transition-colors hover:border-[#17191B] hover:bg-[#17191B] hover:text-[#F2F0EC] cursor-pointer"
           >
             Next Sample
           </button>
@@ -78,7 +78,7 @@ export function DraggableMaterialDeck({
             type="button"
             onClick={resetDeck}
             aria-label="Reset material sample order"
-            className="inline-flex h-8 w-8 items-center justify-center border border-[#A7A6A3]/35 text-[#F2F0EC] transition-colors hover:border-[#F2F0EC] dark:border-[#17191B]/25 dark:text-[#17191B] dark:hover:border-[#17191B] cursor-pointer"
+            className="inline-flex h-8 w-8 items-center justify-center border border-[#17191B]/22 text-[#17191B] transition-colors hover:border-[#17191B] cursor-pointer"
           >
             <RotateCcw className="h-3.5 w-3.5" aria-hidden="true" />
           </button>

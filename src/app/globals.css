@@ -235,6 +235,128 @@
   .dark .glass-surface {
     background-color: rgba(23, 25, 27, 0.95);
   }
+  .site-header-plate-fill {
+    background-color: rgba(242, 240, 236, 0.96);
+  }
+  .dark .site-header-plate-fill {
+    background-color: rgba(23, 25, 27, 0.95);
+  }
+}
+
+/*
+ * Header chrome is scroll-linked via --header-p (0 = hero overlay, 1 = settled).
+ * The bar itself never paints a border. The plate fades in with a bottom edge only,
+ * so side and top borders cannot appear mid-transition.
+ */
+.site-header {
+  --header-p: 1;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  padding-top: calc(0.875rem + (1 - var(--header-p)) * 0.375rem);
+  padding-bottom: calc(0.875rem + (1 - var(--header-p)) * 0.375rem);
+  color: color-mix(
+    in srgb,
+    #17191b calc(var(--header-p) * 100%),
+    #f2f0ec
+  );
+}
+
+.site-header-home {
+  --header-p: 0;
+}
+
+.dark .site-header {
+  color: #f2f0ec;
+}
+
+.site-header-scrim,
+.site-header-plate {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border: 0;
+  box-shadow: none;
+}
+
+.site-header-scrim {
+  z-index: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(23, 25, 27, 0.72),
+    rgba(23, 25, 27, 0.28),
+    transparent
+  );
+  opacity: calc(1 - var(--header-p));
+}
+
+.site-header-plate {
+  z-index: 1;
+  opacity: var(--header-p);
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-bottom: 1px solid var(--border-hairline);
+  background: none;
+}
+
+.site-header-plate-fill {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  box-shadow: none;
+  background-color: rgba(242, 240, 236, 0.84);
+  backdrop-filter: blur(22px) saturate(145%);
+  -webkit-backdrop-filter: blur(22px) saturate(145%);
+}
+
+.dark .site-header-plate-fill {
+  background-color: rgba(23, 25, 27, 0.78);
+}
+
+.site-header-logo {
+  position: relative;
+  display: block;
+  flex: none;
+  height: calc(2rem + (1 - var(--header-p)) * 0.5rem);
+  aspect-ratio: 2104 / 747;
+}
+
+@media (min-width: 640px) {
+  .site-header-logo {
+    height: calc(2.25rem + (1 - var(--header-p)) * 0.5rem);
+  }
+}
+
+.site-header-logo-white,
+.site-header-logo-black {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+.site-header-logo-white {
+  opacity: calc(1 - var(--header-p));
+}
+
+.site-header-logo-black {
+  opacity: var(--header-p);
+}
+
+.dark .site-header-logo-white {
+  opacity: 1;
+}
+
+.dark .site-header-logo-black {
+  opacity: 0;
+}
+
+.site-header-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: left center;
 }
 
 /* Bold Sculptural Architectural Type Utilities */
