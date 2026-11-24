@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
 import { ArrowUpRight, X } from "lucide-react";
 import { PRIMARY_NAV, SITE_CONFIG } from "@/content/site";
+import { BUSINESS_PROFILE } from "@/content/business";
 import { BrandLogo } from "@/components/ui/BrandLogo";
 import { ThemeToggle } from "@/components/layout/ThemeToggle";
 
@@ -127,9 +128,18 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
                 <p className="eyebrow-label text-[#5C5B58] dark:text-[#A7A6A3]">
                   {SITE_CONFIG.markets}
                 </p>
-                <p className="text-xs text-[#34383C] dark:text-[#D8D5CF]">
-                  {SITE_CONFIG.contactPlaceholders.emailLabel}
-                </p>
+                {BUSINESS_PROFILE.email ? (
+                  <a
+                    href={`mailto:${BUSINESS_PROFILE.email}`}
+                    className="block text-xs text-[#34383C] underline-offset-4 hover:underline dark:text-[#D8D5CF]"
+                  >
+                    {BUSINESS_PROFILE.email}
+                  </a>
+                ) : (
+                  <p className="text-xs text-[#34383C] dark:text-[#D8D5CF]">
+                    {SITE_CONFIG.contactPlaceholders.emailLabel}
+                  </p>
+                )}
               </div>
               <div className="flex items-center gap-4 text-[11px] uppercase tracking-[0.18em]">
                 <Link

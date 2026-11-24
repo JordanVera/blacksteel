@@ -9,6 +9,8 @@ export const LOCATION_MARKETS: Record<"houston" | "austin", LocationMarket> = {
     headline: "Architectural remodeling tailored to Houston's estates and climate.",
     subheadline:
       "From mature tree-lined neighborhoods inside the Loop to sprawling Memorial properties, we execute complex renovations engineered for Gulf Coast humidity, expansive soils, and elevated daily living.",
+    answerLead:
+      "BLACKSTEEL Construction & Remodeling is a family-owned remodeling contractor in Houston, Texas, handling luxury kitchens, bathrooms, whole-home remodels, additions, and general contracting in River Oaks, Memorial, West University, Bellaire, the Heights, and the rest of Greater Houston.",
     overview: [
       "Remodeling in Houston presents distinct architectural and technical realities. Classic estates and mid-century residences across River Oaks, Memorial, Tanglewood, West University, and Bellaire frequently combine generous footprints with compartmentalized layouts, aging mechanical systems, and building envelopes tested by heat and moisture.",
       "BLACKSTEEL approaches Houston renovations from the structure outward—coordinating foundation engineering, high-efficiency dehumidification and HVAC distribution, moisture-resilient waterproofing, and custom architectural millwork that performs gracefully year after year.",
@@ -44,6 +46,8 @@ export const LOCATION_MARKETS: Record<"houston" | "austin", LocationMarket> = {
     ],
     imageId: "residence-dusk",
     coordinatesLabel: "29.7604° N · 95.3698° W",
+    geo: { latitude: 29.7604, longitude: -95.3698 },
+    updated: "2026-11-23",
   },
   austin: {
     slug: "austin",
@@ -53,6 +57,8 @@ export const LOCATION_MARKETS: Record<"houston" | "austin", LocationMarket> = {
     headline: "Precision construction shaped for Austin's light, terrain, and architecture.",
     subheadline:
       "Serving discerning homeowners, architects, and designers across Austin with bespoke interior remodeling, custom cabinetry, structural additions, and disciplined general contracting.",
+    answerLead:
+      "BLACKSTEEL Construction & Remodeling is a family-owned remodeling contractor in Austin, Texas, handling luxury kitchens, bathrooms, whole-home remodels, additions, and general contracting in Westlake Hills, Tarrytown, Barton Creek, Clarksville, Travis Heights, and the rest of Greater Austin.",
     overview: [
       "Austin's architectural landscape celebrates the threshold between interior shelter and Central Texas terrain—limestone topography, live oak canopies, cantilevered overhangs, and expansive glass walls that frame changing Hill Country light.",
       "Whether modernizing an established Tarrytown or Clarksville home, fabricating minimalist oak-and-stone kitchens in Westlake, or executing a complex structural addition near Barton Creek, BLACKSTEEL brings meticulous trade coordination and unwavering finish tolerances to every Austin site.",
@@ -88,5 +94,7 @@ export const LOCATION_MARKETS: Record<"houston" | "austin", LocationMarket> = {
     ],
     imageId: "millwork-detail",
     coordinatesLabel: "30.2672° N · 97.7431° W",
+    geo: { latitude: 30.2672, longitude: -97.7431 },
+    updated: "2026-11-23",
   },
 };

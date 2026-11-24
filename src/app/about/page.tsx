@@ -11,7 +11,7 @@ import { EditorialParallaxGrid } from "@/components/aceternity/EditorialParallax
 import { FinalConversionSection } from "@/components/sections/home/FinalConversionSection";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "About Our Company",
+  title: "About Our Family-Owned Remodeling Company",
   description:
     "BLACKSTEEL Construction & Remodeling is a family-owned, sibling-led construction practice delivering luxury remodeling, custom millwork, and architectural construction in Houston and Austin, Texas.",
   path: "/about",
@@ -71,7 +71,7 @@ export default function AboutPage() {
         index="ABOUT"
         eyebrow="Our Company"
         title="Family-owned craft, built for modern Texas architecture."
-        description="Operated by two siblings across Houston and Austin, BLACKSTEEL Construction & Remodeling exists for clients who refuse to separate design ambition from construction discipline."
+        description="BLACKSTEEL Construction & Remodeling is a family-owned contractor run by two siblings. We remodel homes, build custom cabinetry and millwork, and manage structural construction in Houston and Austin, Texas, for clients who refuse to separate design ambition from construction discipline."
         media={heroMedia}
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "About" }]}
       />

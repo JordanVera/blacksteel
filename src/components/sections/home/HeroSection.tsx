@@ -1,11 +1,8 @@
-'use client';
-
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowDown, ArrowUpRight } from 'lucide-react';
-import { motion } from 'motion/react';
-import { getMediaAsset } from '@/content/media';
 import { Container } from '@/components/layout/Container';
+import { HeroReveal } from '@/components/motion/HeroReveal';
 import { SpotlightBeams } from '@/components/aceternity/SpotlightBeams';
 import { ContainerScrollStage } from '@/components/aceternity/ContainerScrollStage';
 import { FlipWords } from '@/components/aceternity/FlipWords';
@@ -17,6 +14,10 @@ const HERO_DISCIPLINES = [
   'Architectural Permanence.',
   'Complex Remodeling.',
 ];
+
+const HERO_DISCIPLINES_TEXT = `Engineered for ${HERO_DISCIPLINES.map((word) =>
+  word.replace(/\.$/, '').toLowerCase(),
+).join(', ')}.`;
 
 export function HeroSection() {
   return (
@@ -37,10 +38,8 @@ export function HeroSection() {
         {/* Top Monumental Typographic Block */}
         <div className="grid grid-cols-1 items-end gap-10 lg:grid-cols-12">
           <div className="space-y-7 lg:col-span-8">
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            <HeroReveal
+              offset={12}
               className="flex flex-wrap items-center gap-3"
             >
               <span className="glass-photo inline-flex items-center gap-3 px-3.5 py-1.5 font-mono text-[10px] font-medium uppercase tracking-[0.22em] text-[#F2F0EC]">
@@ -51,50 +50,41 @@ export function HeroSection() {
               <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#A7A6A3]">
                 Sibling-Owned · Architectural Build Practice
               </span>
-            </motion.div>
+            </HeroReveal>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 26 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.75,
-                delay: 0.1,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              className="display-hero text-[#F2F0EC]"
-            >
+            <h1 className="display-hero animate-hero-rise text-[#F2F0EC]">
               Built Beyond
               <br />
               <span className="bg-gradient-to-r from-[#F2F0EC] via-[#D8D5CF] to-[#A7A6A3] bg-clip-text text-transparent">
                 Ordinary.
               </span>
-            </motion.h1>
+            </h1>
 
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.7,
-                delay: 0.22,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              className="flex flex-wrap items-baseline gap-x-2.5 gap-y-1 text-base text-[#D8D5CF] sm:text-xl"
-            >
-              <span className="font-light text-[#A7A6A3]">Engineered for </span>
-              <FlipWords
-                words={HERO_DISCIPLINES}
-                className="font-display font-semibold tracking-[-0.02em] text-[#F2F0EC]"
-              />
-            </motion.div>
+            <HeroReveal delay={0.22}>
+              <p className="sr-only">{HERO_DISCIPLINES_TEXT}</p>
+              <div
+                aria-hidden="true"
+                className="flex flex-wrap items-baseline gap-x-2.5 gap-y-1 text-base text-[#D8D5CF] sm:text-xl"
+              >
+                <span className="font-light text-[#A7A6A3]">
+                  Engineered for{' '}
+                </span>
+                <FlipWords
+                  words={HERO_DISCIPLINES}
+                  className="font-display font-semibold tracking-[-0.02em] text-[#F2F0EC]"
+                />
+              </div>
+            </HeroReveal>
 
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.7,
-                delay: 0.32,
-                ease: [0.22, 1, 0.36, 1],
-              }}
+            <p className="animate-hero-rise max-w-[58ch] text-[15px] font-light leading-[1.7] text-[#D8D5CF] sm:text-base">
+              BLACKSTEEL Construction &amp; Remodeling is a sibling-owned
+              contractor for luxury kitchens, bathrooms, whole-home remodels,
+              custom cabinetry, and structural additions in Houston and Austin,
+              Texas.
+            </p>
+
+            <HeroReveal
+              delay={0.32}
               className="flex flex-col gap-3.5 pt-2 sm:flex-row sm:items-center"
             >
               <MovingBorderButton href="/contact" variant="ivory">
@@ -115,20 +105,11 @@ export function HeroSection() {
                   aria-hidden="true"
                 />
               </Link>
-            </motion.div>
+            </HeroReveal>
           </div>
 
           {/* Right Smoked-Steel Studio Spec Readout */}
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 0.75,
-              delay: 0.38,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-            className="lg:col-span-4"
-          >
+          <HeroReveal delay={0.38} offset={18} className="lg:col-span-4">
             <div className="glass-steel arch-crosshair p-5 sm:p-6">
               <div className="flex items-center justify-between border-b border-[#A7A6A3]/22 pb-3 font-mono text-[10px] uppercase tracking-[0.2em]">
                 <span className="text-[#A7A6A3]">Practice Telemetry</span>
@@ -181,7 +162,7 @@ export function HeroSection() {
                 />
               </a>
             </div>
-          </motion.div>
+          </HeroReveal>
         </div>
 
         {/* 3D Perspective ContainerScroll Architectural Showcase Stage */}

@@ -397,10 +397,28 @@
   animation: spotlight-sweep 1.8s cubic-bezier(0.22, 1, 0.36, 1) 0.25s 1 forwards;
 }
 
+/* Transform-only so server-rendered hero text paints immediately for LCP. */
+@keyframes hero-rise {
+  from {
+    transform: translateY(22px);
+  }
+  to {
+    transform: none;
+  }
+}
+
+.animate-hero-rise {
+  animation: hero-rise 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-spotlight {
     animation: none;
     opacity: 0.85;
     transform: translate(-45%, -34%) scale(1);
+  }
+
+  .animate-hero-rise {
+    animation: none;
   }
 }

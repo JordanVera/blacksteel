@@ -29,6 +29,7 @@ export const FOOTER_COLUMNS = {
     { label: "Selected Work", href: "/projects" },
     { label: "Our Company", href: "/about" },
     { label: "Our Approach", href: "/process" },
+    { label: "Journal", href: "/journal" },
     { label: "Start a Project", href: "/contact" },
   ],
   expertise: [

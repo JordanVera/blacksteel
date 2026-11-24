@@ -7,6 +7,7 @@ import { ArrowUpRight } from "lucide-react";
 import type { ProjectCategory, ProjectRecord } from "@/types/domain";
 import { getMediaAsset } from "@/content/media";
 import { cn } from "@/lib/utils";
+import { DemoBadge } from "@/components/ui/DemoBadge";
 
 interface PortfolioGridClientProps {
   projects: ProjectRecord[];
@@ -123,6 +124,7 @@ export function PortfolioGridClient({ projects }: PortfolioGridClientProps) {
                       <span className="glass-photo px-2.5 py-1 text-[10px] font-medium tabular-nums uppercase tracking-[0.2em]">
                         {project.index}
                       </span>
+                      {project.isDemonstration ? <DemoBadge /> : null}
                     </div>
                   </div>
 

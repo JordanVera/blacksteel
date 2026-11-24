@@ -11,7 +11,7 @@ import { ArchitecturalStickyReveal } from "@/components/aceternity/Architectural
 import { FinalConversionSection } from "@/components/sections/home/FinalConversionSection";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Our Approach",
+  title: "Our Remodeling Process",
   description:
     "Discover BLACKSTEEL's five-phase architectural remodeling and construction process—from initial site walkthrough and pre-construction definition to disciplined execution and handover.",
   path: "/process",

@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { buildPageMetadata } from "@/lib/seo";
 import { SITE_CONFIG } from "@/content/site";
+import { BUSINESS_PROFILE, telephoneHref } from "@/content/business";
 import { Container } from "@/components/layout/Container";
 import { SectionShell } from "@/components/layout/SectionShell";
 import { PageHero } from "@/components/sections/shared/PageHero";
 import { ProjectInquiryForm } from "@/components/forms/ProjectInquiryForm";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Start Your Project | Contact",
+  title: "Contact a Houston & Austin Remodeling Contractor",
   description:
     "Begin a private conversation with BLACKSTEEL Construction & Remodeling regarding luxury residential remodeling, custom construction, or general contracting in Houston or Austin, Texas.",
   path: "/contact",
@@ -84,7 +85,16 @@ export default function ContactPage() {
                       Direct Line
                     </dt>
                     <dd className="mt-1 text-[#34383C] dark:text-[#D8D5CF]">
-                      {SITE_CONFIG.contactPlaceholders.phoneLabel}
+                      {BUSINESS_PROFILE.telephone ? (
+                        <a
+                          href={telephoneHref(BUSINESS_PROFILE.telephone)}
+                          className="underline-offset-4 hover:underline"
+                        >
+                          {BUSINESS_PROFILE.telephone}
+                        </a>
+                      ) : (
+                        SITE_CONFIG.contactPlaceholders.phoneLabel
+                      )}
                     </dd>
                   </div>
                   <div>
@@ -92,7 +102,16 @@ export default function ContactPage() {
                       Email
                     </dt>
                     <dd className="mt-1 text-[#34383C] dark:text-[#D8D5CF]">
-                      {SITE_CONFIG.contactPlaceholders.emailLabel}
+                      {BUSINESS_PROFILE.email ? (
+                        <a
+                          href={`mailto:${BUSINESS_PROFILE.email}`}
+                          className="underline-offset-4 hover:underline"
+                        >
+                          {BUSINESS_PROFILE.email}
+                        </a>
+                      ) : (
+                        SITE_CONFIG.contactPlaceholders.emailLabel
+                      )}
                     </dd>
                   </div>
                   <div>

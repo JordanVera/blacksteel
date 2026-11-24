@@ -2,11 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import type { MediaAsset } from "@/types/domain";
+import { buildBreadcrumbJsonLd, type BreadcrumbItem } from "@/lib/seo";
 import { Container } from "@/components/layout/Container";
-interface BreadcrumbItem {
-  label: string;
-  href?: string;
-}
+import { JsonLd } from "@/components/seo/JsonLd";
+
+export type { BreadcrumbItem };
 
 interface PageHeroProps {
   index?: string;
@@ -17,7 +17,18 @@ interface PageHeroProps {
   media?: MediaAsset;
 }
 
-export function PageHero({
+export function PageHero(props: PageHeroProps) {
+  return (
+    <>
+      {props.breadcrumbs ? (
+        <JsonLd data={buildBreadcrumbJsonLd(props.breadcrumbs)} />
+      ) : null}
+      <PageHeroSection {...props} />
+    </>
+  );
+}
+
+function PageHeroSection({
   index,
   eyebrow,
   title,

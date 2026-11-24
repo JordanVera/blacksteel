@@ -11,6 +11,19 @@ import { ActionLink } from "@/components/ui/ActionLink";
 import { ArchitecturalRule } from "@/components/motion/ArchitecturalRule";
 import { ArchitecturalCompare } from "@/components/aceternity/ArchitecturalCompare";
 import { FinalConversionSection } from "@/components/sections/home/FinalConversionSection";
+import { FaqSection } from "@/components/sections/shared/FaqSection";
+import {
+  LinkCardGrid,
+  type LinkCard,
+} from "@/components/sections/shared/LinkCardGrid";
+import { LOCATION_MARKETS } from "@/content/locations";
+import {
+  getAllLocalServicePages,
+  localServicePath,
+} from "@/features/locations/catalog";
+import { getArticlesForService, journalPath } from "@/features/journal/catalog";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { buildServiceItemJsonLd } from "@/lib/seo";
 
 interface ServiceDetailTemplateProps {
   service: ServiceItem;
@@ -19,14 +32,33 @@ interface ServiceDetailTemplateProps {
 export function ServiceDetailTemplate({ service }: ServiceDetailTemplateProps) {
   const heroMedia = getMediaAsset(service.imageId);
   const related = getRelatedServices(service.relatedSlugs);
+  const localCards: LinkCard[] = [
+    ...getAllLocalServicePages()
+      .filter((page) => page.service === service.slug)
+      .map((page) => ({
+        href: localServicePath(page),
+        eyebrow: `${LOCATION_MARKETS[page.market].city} · Service`,
+        title: page.title.replace(/\.$/, ""),
+        description: page.seoDescription,
+        cta: "View City Page",
+      })),
+    ...getArticlesForService(service.slug).map((article) => ({
+      href: journalPath(article),
+      eyebrow: `Journal · ${article.category}`,
+      title: article.title,
+      description: article.description,
+      cta: "Read Article",
+    })),
+  ];
 
   return (
     <>
+      <JsonLd data={buildServiceItemJsonLd(service)} />
       <PageHero
         index={service.index}
         eyebrow={service.eyebrow}
         title={service.title}
-        description={service.heroHeadline}
+        description={service.answerLead}
         media={heroMedia}
         breadcrumbs={[
           { label: "Home", href: "/" },
@@ -155,6 +187,26 @@ export function ServiceDetailTemplate({ service }: ServiceDetailTemplateProps) {
                 />
               </div>
             </div>
+          </Container>
+        </SectionShell>
+      ) : null}
+
+      <FaqSection
+        faq={service.faq}
+        title={`${service.shortTitle} questions, answered plainly.`}
+        surface={service.slug === "restoration" ? "elevated" : "canvas"}
+      />
+
+      {localCards.length > 0 ? (
+        <SectionShell surface="elevated" spacing="compact">
+          <Container>
+            <EditorialHeading
+              eyebrow="Houston & Austin"
+              size="section"
+              title={`${service.shortTitle} by city, plus practical guides.`}
+              className="mb-10"
+            />
+            <LinkCardGrid cards={localCards} />
           </Container>
         </SectionShell>
       ) : null}

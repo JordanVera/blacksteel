@@ -12,6 +12,7 @@ import { PageHero } from "@/components/sections/shared/PageHero";
 import { ArchitecturalRule } from "@/components/motion/ArchitecturalRule";
 import { ArchitecturalCompare } from "@/components/aceternity/ArchitecturalCompare";
 import { FinalConversionSection } from "@/components/sections/home/FinalConversionSection";
+import { DemoBadge } from "@/components/ui/DemoBadge";
 
 interface ProjectDetailPageProps {
   params: Promise<{ slug: string }>;
@@ -36,7 +37,7 @@ export async function generateMetadata({
 
   const cover = getMediaAsset(project.coverImageId);
   return buildPageMetadata({
-    title: `${project.name} — ${project.city}, ${project.state}`,
+    title: `${project.category} in ${project.neighborhood}, ${project.city}`,
     description: project.shortDescription,
     path: `/projects/${project.slug}`,
     ogImage: cover.src,
@@ -78,8 +79,22 @@ export default async function ProjectDetailPage({
         <Container>
           <div className="grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-16">
             <div className="space-y-6 lg:col-span-7">
+              {project.isDemonstration ? (
+                <DemoBadge
+                  variant="surface"
+                  label="Demonstration Study · Representative Imagery"
+                />
+              ) : null}
               <p className="eyebrow-label text-[#5C5B58] dark:text-[#A7A6A3]">
                 Architectural Narrative
+              </p>
+              <p className="max-w-[60ch] text-lg font-light leading-[1.7] text-[#17191B] dark:text-[#F2F0EC]">
+                {project.name} is a {project.category.toLowerCase()} by
+                BLACKSTEEL Construction &amp; Remodeling in{" "}
+                {project.neighborhood}, {project.city}, Texas
+                {project.completionDate
+                  ? `, completed in ${project.completionDate}.`
+                  : "."}
               </p>
               {project.fullNarrative.map((paragraph) => (
                 <p

@@ -11,10 +11,9 @@ import { RegionalMarketsSection } from "@/components/sections/home/RegionalMarke
 import { FinalConversionSection } from "@/components/sections/home/FinalConversionSection";
 
 export const metadata: Metadata = buildPageMetadata({
-  title:
-    "BLACKSTEEL Construction & Remodeling | Luxury Remodeling in Houston & Austin",
+  title: { absolute: "Luxury Remodeling in Houston & Austin | BLACKSTEEL" },
   description:
-    "Built Beyond Ordinary. Family-owned luxury residential remodeling, custom cabinetry and architectural millwork, structural construction, general contracting, and reconstruction in Houston and Austin, Texas.",
+    "BLACKSTEEL Construction & Remodeling is a family-owned contractor for luxury home remodeling, custom cabinetry, structural additions, and general contracting in Houston and Austin, Texas.",
   path: "/",
   ogImage: "/images/demo/residence-pavilion.jpg",
 });

@@ -46,6 +46,7 @@ export const DEMONSTRATION_PROJECTS: readonly ProjectRecord[] = [
         "Progression from finished architectural shell to integrated millwork and living surfaces.",
     },
     completionDate: "2024",
+    updated: "2026-11-23",
   },
   {
     slug: "westlake-monolith-kitchen",
@@ -80,6 +81,7 @@ export const DEMONSTRATION_PROJECTS: readonly ProjectRecord[] = [
     featured: true,
     isDemonstration: false,
     completionDate: "2024",
+    updated: "2026-11-23",
   },
   {
     slug: "river-oaks-bath-sanctuary",
@@ -114,6 +116,7 @@ export const DEMONSTRATION_PROJECTS: readonly ProjectRecord[] = [
     featured: true,
     isDemonstration: false,
     completionDate: "2023",
+    updated: "2026-11-23",
   },
   {
     slug: "barton-creek-architectural-addition",
@@ -151,5 +154,6 @@ export const DEMONSTRATION_PROJECTS: readonly ProjectRecord[] = [
     featured: false,
     isDemonstration: false,
     completionDate: "2024",
+    updated: "2026-11-23",
   },
 ];

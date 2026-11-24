@@ -8,7 +8,7 @@ import { PortfolioGridClient } from "@/components/sections/portfolio/PortfolioGr
 import { FinalConversionSection } from "@/components/sections/home/FinalConversionSection";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Selected Work & Portfolio",
+  title: "Remodeling Portfolio: Houston & Austin Projects",
   description:
     "Explore architectural remodeling, luxury kitchen, bath sanctuary, and structural addition studies designed for Houston and Austin residences.",
   path: "/projects",
