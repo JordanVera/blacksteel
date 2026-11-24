@@ -1,7 +1,14 @@
 import type { Metadata, Viewport } from 'next';
 import { JetBrains_Mono, Manrope, Syne } from 'next/font/google';
 import type { ReactNode } from 'react';
-import { SITE_NAME, SITE_URL, buildOrganizationJsonLd } from '@/lib/seo';
+import {
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_URL,
+  TITLE_SUFFIX,
+  buildOrganizationJsonLd,
+} from '@/lib/seo';
+import { JsonLd } from '@/components/seo/JsonLd';
 import { TRPCReactProvider } from '@/server/trpc/client';
 import { ThemeProvider } from '@/components/layout/ThemeProvider';
 import { MotionProvider } from '@/components/motion/MotionProvider';
@@ -33,11 +40,10 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} | Houston & Austin Luxury Remodeling`,
-    template: `%s | ${SITE_NAME}`,
+    default: `Luxury Remodeling in Houston & Austin${TITLE_SUFFIX}`,
+    template: `%s${TITLE_SUFFIX}`,
   },
-  description:
-    'Family-owned luxury residential remodeling, custom cabinetry and architectural millwork, structural construction, general contracting, and property restoration in Houston and Austin, Texas.',
+  description: SITE_DESCRIPTION,
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -78,12 +84,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationJsonLd),
-          }}
-        />
+        <JsonLd data={organizationJsonLd} />
       </head>
       <body className="min-h-screen bg-[#F2F0EC] text-[#17191B] antialiased selection:bg-[#34383C] selection:text-[#F2F0EC] dark:bg-[#17191B] dark:text-[#F2F0EC] dark:selection:bg-[#F2F0EC] dark:selection:text-[#17191B]">
         <a

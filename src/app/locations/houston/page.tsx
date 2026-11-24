@@ -6,7 +6,7 @@ import { LocationLandingTemplate } from "@/components/sections/locations/Locatio
 const market = LOCATION_MARKETS.houston;
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Houston Luxury Remodeling & Custom Construction",
+  title: "Luxury Remodeling & Custom Construction in Houston, TX",
   description:
     "BLACKSTEEL Construction & Remodeling delivers whole-home luxury remodeling, custom cabinetry, structural renovations, general contracting, and architectural reconstruction in Houston, TX.",
   path: "/locations/houston",

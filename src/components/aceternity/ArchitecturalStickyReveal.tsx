@@ -138,12 +138,9 @@ export function ArchitecturalStickyReveal({
               </AnimatePresence>
 
               {/* Top Frosted Stage Index */}
-              <div className="absolute left-5 top-5 right-5 flex items-center justify-between">
+              <div className="absolute left-5 top-5">
                 <span className="glass-photo px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.2em]">
                   Stage {activeStage.number} / 0{stages.length}
-                </span>
-                <span className="glass-photo px-3 py-1.5 text-[10px] uppercase tracking-[0.18em] text-[#F2F0EC]/85">
-                  Demonstration Visual
                 </span>
               </div>
 

@@ -1,5 +1,17 @@
+import type { Metadata } from "next";
 import { SERVICES_CATALOG } from "@/content/services";
+import { getMediaAsset } from "@/content/media";
+import { buildPageMetadata } from "@/lib/seo";
 import type { ServiceItem, ServiceSlug } from "@/types/domain";
+
+export function buildServiceMetadata(service: ServiceItem): Metadata {
+  return buildPageMetadata({
+    title: service.seoTitle,
+    description: service.answerLead,
+    path: `/services/${service.slug}`,
+    ogImage: getMediaAsset(service.imageId).src,
+  });
+}
 
 export function getAllServices(): ServiceItem[] {
   return [...SERVICES_CATALOG];

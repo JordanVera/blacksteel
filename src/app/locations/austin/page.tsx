@@ -6,7 +6,7 @@ import { LocationLandingTemplate } from "@/components/sections/locations/Locatio
 const market = LOCATION_MARKETS.austin;
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Austin Luxury Remodeling & Custom Construction",
+  title: "Luxury Remodeling & Custom Construction in Austin, TX",
   description:
     "BLACKSTEEL Construction & Remodeling delivers bespoke residential remodeling, custom kitchens and millwork, structural additions, and general contracting in Austin, TX.",
   path: "/locations/austin",

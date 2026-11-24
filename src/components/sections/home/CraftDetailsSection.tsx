@@ -219,11 +219,6 @@ export function CraftDetailsSection() {
               beneath and before it—plumb framing, concealed steel spans, stone
               layout, and integrated millwork engineering.
             </p>
-            <p className="border-l border-[#17191B]/22 pl-3.5 font-mono text-[11px] leading-[1.65] text-[#5C5B58]">
-              Illustrative spatial comparison pairing demonstration
-              architectural photography. Commissioned BLACKSTEEL before/after
-              documentation will replace these visuals.
-            </p>
           </RevealMask>
 
           <RevealMask delay={0.1} className="lg:col-span-8">

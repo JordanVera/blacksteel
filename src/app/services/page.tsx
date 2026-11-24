@@ -11,7 +11,7 @@ import { PageHero } from "@/components/sections/shared/PageHero";
 import { FinalConversionSection } from "@/components/sections/home/FinalConversionSection";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Services & Expertise",
+  title: "Remodeling & Construction Services in Houston & Austin",
   description:
     "Explore BLACKSTEEL's core disciplines across luxury residential remodeling, bespoke kitchens and bathrooms, custom construction, general contracting, and property restoration in Houston and Austin.",
   path: "/services",

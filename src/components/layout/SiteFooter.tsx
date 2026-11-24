@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { FOOTER_COLUMNS, SITE_CONFIG } from '@/content/site';
+import { BUSINESS_PROFILE, telephoneHref } from '@/content/business';
 import { BrandLogo } from '@/components/ui/BrandLogo';
 import { Container } from '@/components/layout/Container';
 import { ThemeToggle } from '@/components/layout/ThemeToggle';
@@ -29,8 +30,26 @@ export function SiteFooter() {
               <p className="uppercase tracking-[0.18em] text-[#F2F0EC]/85">
                 {SITE_CONFIG.contactPlaceholders.marketsLabel}
               </p>
-              <p>{SITE_CONFIG.contactPlaceholders.phoneLabel}</p>
-              <p>{SITE_CONFIG.contactPlaceholders.emailLabel}</p>
+              {BUSINESS_PROFILE.telephone ? (
+                <a
+                  href={telephoneHref(BUSINESS_PROFILE.telephone)}
+                  className="block transition-colors hover:text-[#F2F0EC]"
+                >
+                  {BUSINESS_PROFILE.telephone}
+                </a>
+              ) : (
+                <p>{SITE_CONFIG.contactPlaceholders.phoneLabel}</p>
+              )}
+              {BUSINESS_PROFILE.email ? (
+                <a
+                  href={`mailto:${BUSINESS_PROFILE.email}`}
+                  className="block transition-colors hover:text-[#F2F0EC]"
+                >
+                  {BUSINESS_PROFILE.email}
+                </a>
+              ) : (
+                <p>{SITE_CONFIG.contactPlaceholders.emailLabel}</p>
+              )}
             </div>
           </div>
 

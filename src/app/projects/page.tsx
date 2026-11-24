@@ -8,7 +8,7 @@ import { PortfolioGridClient } from "@/components/sections/portfolio/PortfolioGr
 import { FinalConversionSection } from "@/components/sections/home/FinalConversionSection";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Selected Work & Portfolio",
+  title: "Remodeling Portfolio: Houston & Austin Projects",
   description:
     "Explore architectural remodeling, luxury kitchen, bath sanctuary, and structural addition studies designed for Houston and Austin residences.",
   path: "/projects",
@@ -23,7 +23,7 @@ export default function ProjectsIndexPage() {
         index="PORTFOLIO"
         eyebrow="Selected Work"
         title="Architectural studies in luxury remodeling and bespoke craft."
-        description="These demonstration studies showcase our portfolio architecture, narrative depth, and material presentation prior to publishing commissioned BLACKSTEEL client photography."
+        description="Explore completed remodeling, luxury kitchen, bath sanctuary, and structural addition work across Houston and Austin."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Work" }]}
       />
 

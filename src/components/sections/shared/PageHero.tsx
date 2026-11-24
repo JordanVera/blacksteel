@@ -2,13 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import type { MediaAsset } from "@/types/domain";
+import { buildBreadcrumbJsonLd, type BreadcrumbItem } from "@/lib/seo";
 import { Container } from "@/components/layout/Container";
-import { DemoBadge } from "@/components/ui/DemoBadge";
+import { JsonLd } from "@/components/seo/JsonLd";
 
-interface BreadcrumbItem {
-  label: string;
-  href?: string;
-}
+export type { BreadcrumbItem };
 
 interface PageHeroProps {
   index?: string;
@@ -17,17 +15,26 @@ interface PageHeroProps {
   description?: string;
   breadcrumbs?: BreadcrumbItem[];
   media?: MediaAsset;
-  showDemoBadge?: boolean;
 }
 
-export function PageHero({
+export function PageHero(props: PageHeroProps) {
+  return (
+    <>
+      {props.breadcrumbs ? (
+        <JsonLd data={buildBreadcrumbJsonLd(props.breadcrumbs)} />
+      ) : null}
+      <PageHeroSection {...props} />
+    </>
+  );
+}
+
+function PageHeroSection({
   index,
   eyebrow,
   title,
   description,
   breadcrumbs,
   media,
-  showDemoBadge = false,
 }: PageHeroProps) {
   if (media) {
     return (
@@ -81,9 +88,6 @@ export function PageHero({
               ) : null}
               <span>{eyebrow}</span>
             </span>
-            {showDemoBadge || media.isDemonstration ? (
-              <DemoBadge label="Demonstration Visual" />
-            ) : null}
           </div>
 
           <h1 className="display-hero mt-6 max-w-4xl text-[#F2F0EC]">{title}</h1>

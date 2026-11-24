@@ -7,7 +7,6 @@ import { AnimatePresence, motion } from "motion/react";
 import { ArrowUpRight, Maximize2, X } from "lucide-react";
 import type { ProjectRecord } from "@/types/domain";
 import { getMediaAsset } from "@/content/media";
-import { DemoBadge } from "@/components/ui/DemoBadge";
 import { cn } from "@/lib/utils";
 
 interface FocusProjectCardsProps {
@@ -95,9 +94,6 @@ export function FocusProjectCards({ projects }: FocusProjectCardsProps) {
             </span>
 
             <div className="flex items-center gap-2">
-              {project.isDemonstration ? (
-                <DemoBadge label="Demo Study" />
-              ) : null}
               <button
                 type="button"
                 onClick={() => setSelectedProject(project)}
@@ -208,9 +204,6 @@ export function FocusProjectCards({ projects }: FocusProjectCardsProps) {
                     [{selectedProject.index}] {selectedProject.neighborhood} ·{" "}
                     {selectedProject.city}, {selectedProject.state}
                   </span>
-                  {selectedProject.isDemonstration ? (
-                    <DemoBadge label="Demonstration Study" />
-                  ) : null}
                 </div>
               </div>
 

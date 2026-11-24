@@ -24,14 +24,30 @@ export type ServicePillarId =
   | 'general-contracting'
   | 'restoration';
 
+export interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+export interface ContentSection {
+  heading: string;
+  paragraphs: string[];
+  list?: string[];
+}
+
+/** ISO calendar date, e.g. "2026-11-23". */
+export type IsoDate = string;
+
 export interface ServiceItem {
   slug: ServiceSlug;
   pillarId: ServicePillarId;
   index: string;
   title: string;
   shortTitle: string;
+  seoTitle: string;
   eyebrow: string;
   summary: string;
+  answerLead: string;
   heroHeadline: string;
   editorialIntro: string;
   imageId: string;
@@ -42,7 +58,9 @@ export interface ServiceItem {
     body: string;
   }[];
   relatedSlugs: ServiceSlug[];
+  faq: FaqItem[];
   isPrimaryPillar: boolean;
+  updated: IsoDate;
 }
 
 export type ProjectCategory =
@@ -75,6 +93,7 @@ export interface ProjectRecord {
     caption: string;
   };
   completionDate?: string;
+  updated: IsoDate;
 }
 
 export interface ProcessStage {
@@ -88,13 +107,16 @@ export interface ProcessStage {
   imageCaption: string;
 }
 
+export type MarketSlug = 'houston' | 'austin';
+
 export interface LocationMarket {
-  slug: 'houston' | 'austin';
+  slug: MarketSlug;
   city: string;
   state: string;
   regionLabel: string;
   headline: string;
   subheadline: string;
+  answerLead: string;
   overview: string[];
   architecturalFocus: {
     title: string;
@@ -103,4 +125,61 @@ export interface LocationMarket {
   serviceAreas: string[];
   imageId: string;
   coordinatesLabel: string;
+  geo: { latitude: number; longitude: number };
+  updated: IsoDate;
+}
+
+export type LocalServiceSlug = Extract<
+  ServiceSlug,
+  'kitchen-remodeling' | 'bathroom-remodeling' | 'luxury-remodeling'
+>;
+
+export interface LocalServicePage {
+  market: MarketSlug;
+  service: LocalServiceSlug;
+  seoTitle: string;
+  seoDescription: string;
+  title: string;
+  eyebrow: string;
+  answerLead: string;
+  sections: ContentSection[];
+  localConsiderations: { title: string; detail: string }[];
+  faq: FaqItem[];
+  imageId: string;
+  journalSlugs: string[];
+  updated: IsoDate;
+}
+
+export interface NeighborhoodGuide {
+  slug: string;
+  market: MarketSlug;
+  name: string;
+  seoTitle: string;
+  seoDescription: string;
+  title: string;
+  eyebrow: string;
+  answerLead: string;
+  sections: ContentSection[];
+  typicalScopes: string[];
+  faq: FaqItem[];
+  imageId: string;
+  journalSlugs: string[];
+  updated: IsoDate;
+}
+
+export interface JournalArticle {
+  slug: string;
+  title: string;
+  seoTitle: string;
+  description: string;
+  category: string;
+  published: IsoDate;
+  updated: IsoDate;
+  readingMinutes: number;
+  answerLead: string;
+  sections: ContentSection[];
+  faq?: FaqItem[];
+  relatedServiceSlugs: ServiceSlug[];
+  relatedLinks: { label: string; href: string }[];
+  imageId: string;
 }

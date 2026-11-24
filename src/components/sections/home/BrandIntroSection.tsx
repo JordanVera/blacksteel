@@ -115,9 +115,8 @@ export function BrandIntroSection() {
               />
 
               <figcaption className="absolute inset-x-5 bottom-5 glass-steel p-5">
-                <div className="flex items-center justify-between gap-4 font-mono text-[10px] uppercase tracking-[0.2em]">
-                  <span className="text-[#A7A6A3]">Material Study · 02.A</span>
-                  <span className="text-[#F2F0EC]/80">Demo Visual</span>
+                <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#A7A6A3]">
+                  Material Study · 02.A
                 </div>
                 <p className="mt-2 font-display text-lg font-semibold tracking-[-0.02em] text-[#F2F0EC]">
                   Honed limestone planes, frameless glazing, and flush white-oak

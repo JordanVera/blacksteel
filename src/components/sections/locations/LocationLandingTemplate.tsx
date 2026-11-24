@@ -9,9 +9,20 @@ import { SectionShell } from "@/components/layout/SectionShell";
 import { PageHero } from "@/components/sections/shared/PageHero";
 import { EditorialHeading } from "@/components/ui/EditorialHeading";
 import { ActionLink } from "@/components/ui/ActionLink";
-import { DemoBadge } from "@/components/ui/DemoBadge";
 import { ArchitecturalRule } from "@/components/motion/ArchitecturalRule";
 import { FinalConversionSection } from "@/components/sections/home/FinalConversionSection";
+import { JsonLd } from "@/components/seo/JsonLd";
+import {
+  LinkCardGrid,
+  type LinkCard,
+} from "@/components/sections/shared/LinkCardGrid";
+import { buildLocationBusinessJsonLd } from "@/lib/seo";
+import {
+  getLocalServicePages,
+  getNeighborhoodGuides,
+  localServicePath,
+  neighborhoodPath,
+} from "@/features/locations/catalog";
 
 interface LocationLandingTemplateProps {
   market: LocationMarket;
@@ -26,18 +37,35 @@ export function LocationLandingTemplate({
     .filter((p) => p.city.toLowerCase() === market.slug);
   const otherSlug = market.slug === "houston" ? "austin" : "houston";
   const otherCity = market.slug === "houston" ? "Austin" : "Houston";
+  const guides = getNeighborhoodGuides(market.slug);
+  const marketCards: LinkCard[] = [
+    ...getLocalServicePages(market.slug).map((page) => ({
+      href: localServicePath(page),
+      eyebrow: `${market.city} · Service`,
+      title: page.title.replace(/\.$/, ""),
+      description: page.seoDescription,
+      cta: "View Service",
+    })),
+    ...guides.map((guide) => ({
+      href: neighborhoodPath(guide),
+      eyebrow: `${market.city} · Neighborhood Guide`,
+      title: `Remodeling in ${guide.name}`,
+      description: guide.seoDescription,
+      cta: "Read Guide",
+    })),
+  ];
 
   return (
     <>
+      <JsonLd data={buildLocationBusinessJsonLd(market)} />
       <PageHero
         index={market.coordinatesLabel}
         eyebrow={market.regionLabel}
         title={`${market.city}, ${market.state}`}
-        description={market.subheadline}
+        description={market.answerLead}
         media={heroMedia}
         breadcrumbs={[
           { label: "Home", href: "/" },
-          { label: "Markets" },
           { label: market.city },
         ]}
       />
@@ -51,6 +79,9 @@ export function LocationLandingTemplate({
                 size="section"
                 title={market.headline}
               />
+              <p className="max-w-[60ch] text-lg font-light leading-[1.7] text-[#17191B] dark:text-[#F2F0EC]">
+                {market.subheadline}
+              </p>
               {market.overview.map((paragraph) => (
                 <p
                   key={paragraph}
@@ -84,15 +115,29 @@ export function LocationLandingTemplate({
                 </div>
 
                 <ul className="grid grid-cols-2 gap-x-4 gap-y-2.5 border-y border-[#17191B]/12 py-5 text-sm text-[#34383C] dark:border-[#A7A6A3]/20 dark:text-[#D8D5CF]">
-                  {market.serviceAreas.map((area) => (
-                    <li key={area} className="flex items-center gap-2">
-                      <span
-                        aria-hidden="true"
-                        className="h-1 w-1 rounded-full bg-current opacity-50"
-                      />
-                      <span>{area}</span>
-                    </li>
-                  ))}
+                  {market.serviceAreas.map((area) => {
+                    const guide = guides.find((item) =>
+                      area.startsWith(item.name)
+                    );
+                    return (
+                      <li key={area} className="flex items-center gap-2">
+                        <span
+                          aria-hidden="true"
+                          className="h-1 w-1 rounded-full bg-current opacity-50"
+                        />
+                        {guide ? (
+                          <Link
+                            href={neighborhoodPath(guide)}
+                            className="font-medium text-[#17191B] underline decoration-[#17191B]/30 underline-offset-4 hover:decoration-current dark:text-[#F2F0EC] dark:decoration-[#F2F0EC]/30"
+                          >
+                            {area}
+                          </Link>
+                        ) : (
+                          <span>{area}</span>
+                        )}
+                      </li>
+                    );
+                  })}
                 </ul>
 
                 <p className="text-xs leading-[1.65] text-[#5C5B58] dark:text-[#A7A6A3]">
@@ -142,16 +187,12 @@ export function LocationLandingTemplate({
             <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
               <div>
                 <p className="eyebrow-label text-[#5C5B58] dark:text-[#A7A6A3]">
-                  Regional Demonstration Studies
+                  Regional Portfolio
                 </p>
                 <h2 className="mt-2 font-display text-2xl font-semibold tracking-[-0.025em] sm:text-3xl">
                   {market.city} Architectural Studies
                 </h2>
               </div>
-              <DemoBadge
-                label="Demonstration Portfolio Content"
-                variant="surface"
-              />
             </div>
 
             <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2">
@@ -193,6 +234,18 @@ export function LocationLandingTemplate({
           </Container>
         </SectionShell>
       ) : null}
+
+      <SectionShell surface="elevated" spacing="compact">
+        <Container>
+          <EditorialHeading
+            eyebrow={`${market.city} Services & Guides`}
+            size="section"
+            title={`Remodeling in ${market.city}, by project and neighborhood.`}
+            className="mb-10"
+          />
+          <LinkCardGrid cards={marketCards} />
+        </Container>
+      </SectionShell>
 
       <FinalConversionSection />
     </>
