@@ -46,22 +46,22 @@ export default function AboutPage() {
     {
       index: "A.01",
       media: getMediaAsset("residence-pavilion"),
-      caption: "Structural steel stairs & concrete planes (Demonstration Visual)",
+      caption: "Structural steel stairs & concrete planes",
     },
     {
       index: "A.02",
       media: getMediaAsset("kitchen-island"),
-      caption: "Rift-cut oak millwork & waterfall stone (Demonstration Visual)",
+      caption: "Rift-cut oak millwork & waterfall stone",
     },
     {
       index: "A.03",
       media: getMediaAsset("detail-hearth"),
-      caption: "Architectural masonry & oak transitions (Demonstration Visual)",
+      caption: "Architectural masonry & oak transitions",
     },
     {
       index: "A.04",
       media: getMediaAsset("interior-lounge"),
-      caption: "Quiet proportions & black steel glazing (Demonstration Visual)",
+      caption: "Quiet proportions & black steel glazing",
     },
   ];
 

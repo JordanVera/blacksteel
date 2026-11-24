@@ -2,14 +2,13 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { buildPageMetadata } from "@/lib/seo";
 import { getMediaAsset } from "@/content/media";
 import { portfolioRepository } from "@/features/portfolio/repository";
 import { Container } from "@/components/layout/Container";
 import { SectionShell } from "@/components/layout/SectionShell";
 import { PageHero } from "@/components/sections/shared/PageHero";
-import { DemoBadge } from "@/components/ui/DemoBadge";
 import { ArchitecturalRule } from "@/components/motion/ArchitecturalRule";
 import { ArchitecturalCompare } from "@/components/aceternity/ArchitecturalCompare";
 import { FinalConversionSection } from "@/components/sections/home/FinalConversionSection";
@@ -67,7 +66,6 @@ export default async function ProjectDetailPage({
         title={project.name}
         description={project.shortDescription}
         media={coverMedia}
-        showDemoBadge={project.isDemonstration}
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Work", href: "/projects" },
@@ -78,26 +76,6 @@ export default async function ProjectDetailPage({
       {/* Project Dossier & Narrative */}
       <SectionShell surface="canvas" spacing="spacious">
         <Container>
-          {project.isDemonstration ? (
-            <div className="mb-12 flex flex-col justify-between gap-4 border border-[#17191B]/15 bg-[#E8E5DF]/70 p-5 sm:flex-row sm:items-center dark:border-[#A7A6A3]/22 dark:bg-[#34383C]/45">
-              <div className="space-y-1">
-                <DemoBadge label="Demonstration Study" variant="surface" />
-                <p className="text-xs leading-[1.6] text-[#34383C] dark:text-[#D8D5CF]">
-                  This case study demonstrates BLACKSTEEL&apos;s project
-                  template using licensed architectural photography. It does not
-                  represent a completed client commission.
-                </p>
-              </div>
-              <Link
-                href="/projects"
-                className="inline-flex shrink-0 items-center gap-2 text-[11px] font-medium uppercase tracking-[0.18em] underline-offset-4 hover:underline"
-              >
-                <ArrowLeft className="h-3.5 w-3.5" aria-hidden="true" />
-                <span>All Studies</span>
-              </Link>
-            </div>
-          ) : null}
-
           <div className="grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-16">
             <div className="space-y-6 lg:col-span-7">
               <p className="eyebrow-label text-[#5C5B58] dark:text-[#A7A6A3]">
@@ -143,7 +121,7 @@ export default async function ProjectDetailPage({
                       Status
                     </dt>
                     <dd className="mt-1.5 font-medium">
-                      {project.completionDate ?? "Demonstration"}
+                      {project.completionDate ?? "Completed"}
                     </dd>
                   </div>
                 </dl>
@@ -256,7 +234,7 @@ export default async function ProjectDetailPage({
                       <span className="tabular-nums uppercase tracking-[0.18em]">
                         Plate 0{index + 1}
                       </span>
-                      <span>{img.attribution} · Demonstration Visual</span>
+                      <span>{img.attribution}</span>
                     </figcaption>
                   </figure>
                 );

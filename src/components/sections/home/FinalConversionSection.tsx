@@ -177,12 +177,9 @@ export function FinalConversionSection() {
                 />
 
                 {/* Top Corner Architectural Stamps */}
-                <div className="absolute inset-x-4 top-4 flex items-center justify-between gap-3">
+                <div className="absolute inset-x-4 top-4">
                   <span className="border border-[#F2F0EC]/16 bg-[#17191B]/75 px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-[#F2F0EC] backdrop-blur-sm">
                     Folio · 08
-                  </span>
-                  <span className="border border-[#F2F0EC]/12 bg-[#17191B]/75 px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-[#A7A6A3] backdrop-blur-sm">
-                    Demo Architectural Study
                   </span>
                 </div>
 

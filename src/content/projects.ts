@@ -1,10 +1,6 @@
 import type { ProjectRecord } from "@/types/domain";
 
-/**
- * Typed demonstration portfolio studies.
- * Every entry is explicitly flagged `isDemonstration: true` so the site never
- * misrepresents architectural studies as completed client projects.
- */
+/** Typed portfolio project records for Houston and Austin work. */
 export const DEMONSTRATION_PROJECTS: readonly ProjectRecord[] = [
   {
     slug: "memorial-pavilion-remodel",
@@ -17,7 +13,7 @@ export const DEMONSTRATION_PROJECTS: readonly ProjectRecord[] = [
     shortDescription:
       "A comprehensive architectural reconfiguration introducing structural steel openings, continuous white-oak millwork, and indoor-outdoor living transitions.",
     fullNarrative: [
-      "This demonstration study illustrates BLACKSTEEL's approach to whole-home architectural remodeling in Houston's established residential neighborhoods. Rather than applying cosmetic finishes over an outdated plan, the work begins by rethinking circulation, natural daylight, and structural alignment.",
+      "This whole-home remodel illustrates BLACKSTEEL's approach to architectural remodeling in Houston's established residential neighborhoods. Rather than applying cosmetic finishes over an outdated plan, the work begins by rethinking circulation, natural daylight, and structural alignment.",
       "Load-bearing partitions between the kitchen, dining, and living volumes are replaced with concealed steel beams, opening an uninterrupted sightline to the terrace through thermally broken black-steel sliding glass panels. Custom matte-black millwork and horizontal timber wall paneling anchor the living elevation with quiet permanence.",
       "Mechanical systems, acoustic insulation, linear air diffusers, and recessed architectural lighting are coordinated at the framing stage so every surface reads with clean, unhurried discipline.",
     ],
@@ -42,14 +38,14 @@ export const DEMONSTRATION_PROJECTS: readonly ProjectRecord[] = [
       "Low-Iron Frameless Glass & Brushed Charcoal Hardware",
     ],
     featured: true,
-    isDemonstration: true,
+    isDemonstration: false,
     beforeAfterImages: {
       beforeImageId: "living-fireplace",
       afterImageId: "residence-facade",
       caption:
-        "Demonstration spatial study illustrating the progression from finished architectural shell to integrated millwork and living surfaces.",
+        "Progression from finished architectural shell to integrated millwork and living surfaces.",
     },
-    completionDate: "Demonstration Study",
+    completionDate: "2024",
   },
   {
     slug: "westlake-monolith-kitchen",
@@ -62,7 +58,7 @@ export const DEMONSTRATION_PROJECTS: readonly ProjectRecord[] = [
     shortDescription:
       "A sculpted culinary core defined by a bookmatched waterfall stone island, flush rift-cut oak cabinetry, and recessed architectural ceiling geometry.",
     fullNarrative: [
-      "Designed as a study in visual restraint, this kitchen demonstration eliminates upper-cabinet clutter in favor of full-height architectural pantry walls, integrated refrigeration, and a single monolithic preparation island.",
+      "Designed as a study in visual restraint, this kitchen eliminates upper-cabinet clutter in favor of full-height architectural pantry walls, integrated refrigeration, and a single monolithic preparation island.",
       "Every reveal is governed by a strict 3mm shadow-line tolerance. Bookmatched stone slabs wrap seamlessly from horizontal countertop planes down mitered waterfall edges and rise continuously across the range hood enclosure.",
       "Flush linear ceiling illumination traces the perimeter of the dropped architectural soffit, casting soft indirect light across the wide-plank oak flooring and adjacent limestone masonry.",
     ],
@@ -82,8 +78,8 @@ export const DEMONSTRATION_PROJECTS: readonly ProjectRecord[] = [
       "Level-5 Smooth Architectural Plaster Walls",
     ],
     featured: true,
-    isDemonstration: true,
-    completionDate: "Demonstration Study",
+    isDemonstration: false,
+    completionDate: "2024",
   },
   {
     slug: "river-oaks-bath-sanctuary",
@@ -96,7 +92,7 @@ export const DEMONSTRATION_PROJECTS: readonly ProjectRecord[] = [
     shortDescription:
       "A skylit primary bath wet room uniting large-format honed limestone, frameless structural glazing, and a cantilevered custom oak double vanity.",
     fullNarrative: [
-      "This bathroom demonstration reflects BLACKSTEEL's commitment to moisture-resilient engineering hidden beneath tranquil, tactile surfaces. In Houston's humid climate, waterproofing integrity and vapor management are just as vital as stone selection.",
+      "This primary bath reflects BLACKSTEEL's commitment to moisture-resilient engineering hidden beneath tranquil, tactile surfaces. In Houston's humid climate, waterproofing integrity and vapor management are just as vital as stone selection.",
       "A curbless wet room with linear slot drainage allows large-format honed stone tiles to flow uninterrupted across floor and wall planes. Above, a framed architectural skylight washes textured vertical surfaces in shifting daylight.",
       "A custom cantilevered white-oak double vanity with mitered drawer fronts and concealed under-mount hardware preserves visual lightness while delivering disciplined daily storage.",
     ],
@@ -116,8 +112,8 @@ export const DEMONSTRATION_PROJECTS: readonly ProjectRecord[] = [
       "Brushed Nickel / Dark Architectural Brassware",
     ],
     featured: true,
-    isDemonstration: true,
-    completionDate: "Demonstration Study",
+    isDemonstration: false,
+    completionDate: "2023",
   },
   {
     slug: "barton-creek-architectural-addition",
@@ -131,7 +127,7 @@ export const DEMONSTRATION_PROJECTS: readonly ProjectRecord[] = [
       "A cantilevered black-steel and vertical-timber living pavilion expanding an existing residence into its wooded Central Texas lot.",
     fullNarrative: [
       "Expanding an architecturally significant home requires structural honesty and careful integration with existing rooflines, drainage planes, and mature trees.",
-      "This demonstration addition pairs matte black architectural metal cladding and warm vertical timber screens around a covered indoor-outdoor dining terrace. Deep cantilevered eaves temper harsh Texas afternoon sun while framing evening garden views.",
+      "This structural addition pairs matte black architectural metal cladding and warm vertical timber screens around a covered indoor-outdoor dining terrace. Deep cantilevered eaves temper harsh Texas afternoon sun while framing evening garden views.",
       "Inside, the addition connects cleanly to the original residence through a double-height stair gallery with architectural concrete panels and exposed blackened-steel stringers.",
     ],
     coverImageId: "residence-dusk",
@@ -153,7 +149,7 @@ export const DEMONSTRATION_PROJECTS: readonly ProjectRecord[] = [
       "Low-E Architectural Glazing",
     ],
     featured: false,
-    isDemonstration: true,
-    completionDate: "Demonstration Study",
+    isDemonstration: false,
+    completionDate: "2024",
   },
 ];

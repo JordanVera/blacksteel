@@ -6,7 +6,6 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import type { ProjectCategory, ProjectRecord } from "@/types/domain";
 import { getMediaAsset } from "@/content/media";
-import { DemoBadge } from "@/components/ui/DemoBadge";
 import { cn } from "@/lib/utils";
 
 interface PortfolioGridClientProps {
@@ -86,7 +85,7 @@ export function PortfolioGridClient({ projects }: PortfolioGridClientProps) {
       {filtered.length === 0 ? (
         <div className="glass-surface p-12 text-center">
           <p className="font-display text-xl font-semibold tracking-[-0.02em]">
-            No demonstration studies match that exact filter combination.
+            No projects match that exact filter combination.
           </p>
           <button
             type="button"
@@ -124,9 +123,6 @@ export function PortfolioGridClient({ projects }: PortfolioGridClientProps) {
                       <span className="glass-photo px-2.5 py-1 text-[10px] font-medium tabular-nums uppercase tracking-[0.2em]">
                         {project.index}
                       </span>
-                      {project.isDemonstration ? (
-                        <DemoBadge label="Demonstration Study" />
-                      ) : null}
                     </div>
                   </div>
 

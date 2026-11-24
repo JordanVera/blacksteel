@@ -164,8 +164,8 @@ export function HeroSection() {
                   <dt className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#A7A6A3]">
                     Portfolio Visuals
                   </dt>
-                  <dd className="mt-1 font-medium text-[#D8D5CF]">
-                    Demo Photography
+                  <dd className="mt-1 font-medium text-[#F2F0EC]">
+                    BLACKSTEEL Photography
                   </dd>
                 </div>
               </dl>
@@ -206,9 +206,6 @@ export function HeroSection() {
               <div className="absolute inset-x-4 top-4 z-10 flex flex-wrap items-center justify-between gap-3 sm:inset-x-6 sm:top-6">
                 <span className="glass-photo px-3 py-1 font-mono text-[10px] uppercase tracking-[0.2em]">
                   Kitchen Remodel · 01.A
-                </span>
-                <span className="glass-photo px-3 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-[#D8D5CF]">
-                  Demonstration Kitchen Photography
                 </span>
               </div>
 

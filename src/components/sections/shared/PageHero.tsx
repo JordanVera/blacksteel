@@ -3,8 +3,6 @@ import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import type { MediaAsset } from "@/types/domain";
 import { Container } from "@/components/layout/Container";
-import { DemoBadge } from "@/components/ui/DemoBadge";
-
 interface BreadcrumbItem {
   label: string;
   href?: string;
@@ -17,7 +15,6 @@ interface PageHeroProps {
   description?: string;
   breadcrumbs?: BreadcrumbItem[];
   media?: MediaAsset;
-  showDemoBadge?: boolean;
 }
 
 export function PageHero({
@@ -27,7 +24,6 @@ export function PageHero({
   description,
   breadcrumbs,
   media,
-  showDemoBadge = false,
 }: PageHeroProps) {
   if (media) {
     return (
@@ -81,9 +77,6 @@ export function PageHero({
               ) : null}
               <span>{eyebrow}</span>
             </span>
-            {showDemoBadge || media.isDemonstration ? (
-              <DemoBadge label="Demonstration Visual" />
-            ) : null}
           </div>
 
           <h1 className="display-hero mt-6 max-w-4xl text-[#F2F0EC]">{title}</h1>

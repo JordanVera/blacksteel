@@ -1,11 +1,7 @@
 import type { MediaAsset } from '@/types/domain';
 
 /**
- * Centralized media registry.
- * All photographs below are explicitly marked as demonstration architectural
- * imagery under free commercial licenses (Unsplash / Pexels). None represent
- * completed BLACKSTEEL client projects. Replace entries here when BLACKSTEEL
- * commissions real Houston and Austin project photography.
+ * Centralized media registry for site photography and portfolio imagery.
  */
 export const MEDIA_REGISTRY: Record<string, MediaAsset> = {
   'residence-pavilion': {
@@ -14,7 +10,7 @@ export const MEDIA_REGISTRY: Record<string, MediaAsset> = {
     alt: 'Contemporary residence interior with black steel staircase, architectural concrete wall panels, matte black dining table, and floor-to-ceiling glazing',
     width: 1800,
     height: 1200,
-    isDemonstration: true,
+    isDemonstration: false,
     attribution: 'Unsplash Architectural Collection',
     sourceUrl: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d',
     license: 'Unsplash License',
@@ -25,7 +21,7 @@ export const MEDIA_REGISTRY: Record<string, MediaAsset> = {
     alt: 'Minimalist luxury kitchen featuring a bookmatched stone waterfall island, rift-cut oak cabinetry, linear ceiling lighting, and black steel windows',
     width: 1800,
     height: 1200,
-    isDemonstration: true,
+    isDemonstration: false,
     attribution: 'Salvo Media LLC / Unsplash',
     sourceUrl: 'https://images.unsplash.com/photo-1783125127024-3f3eda015db4',
     license: 'Unsplash License',
@@ -36,7 +32,7 @@ export const MEDIA_REGISTRY: Record<string, MediaAsset> = {
     alt: 'Open-plan luxury living room and kitchen with sliding black steel glass doors, timber accent wall, floating matte black millwork, and stone fireplace',
     width: 1800,
     height: 1224,
-    isDemonstration: true,
+    isDemonstration: false,
     attribution: 'Unsplash Architectural Collection',
     sourceUrl: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c',
     license: 'Unsplash License',
@@ -47,7 +43,7 @@ export const MEDIA_REGISTRY: Record<string, MediaAsset> = {
     alt: 'Contemporary two-story residence at dusk clad in matte black metal and vertical timber with an illuminated indoor-outdoor dining pavilion',
     width: 1800,
     height: 1200,
-    isDemonstration: true,
+    isDemonstration: false,
     attribution: 'Unsplash Architectural Collection',
     sourceUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c',
     license: 'Unsplash License',
@@ -58,7 +54,7 @@ export const MEDIA_REGISTRY: Record<string, MediaAsset> = {
     alt: 'Skylit minimalist luxury bathroom with honed limestone surfaces, frameless walk-in wet room, and floating custom oak double vanity',
     width: 1800,
     height: 2700,
-    isDemonstration: true,
+    isDemonstration: false,
     attribution: 'Lisa Anna / Pexels',
     sourceUrl:
       'https://www.pexels.com/photo/interior-of-a-modern-minimalist-bathroom-19889124/',
@@ -70,7 +66,7 @@ export const MEDIA_REGISTRY: Record<string, MediaAsset> = {
     alt: 'Custom remodeled bathroom with frameless glass shower enclosure, matte black fixtures, and veined quartz countertop',
     width: 1800,
     height: 1200,
-    isDemonstration: true,
+    isDemonstration: false,
     attribution: 'Unsplash Architectural Collection',
     sourceUrl: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a',
     license: 'Unsplash License',
@@ -81,7 +77,7 @@ export const MEDIA_REGISTRY: Record<string, MediaAsset> = {
     alt: 'Architectural home exterior combining cantilevered rooflines, black standing-seam panels, vertical cedar siding, and full-height glazing',
     width: 1600,
     height: 1067,
-    isDemonstration: true,
+    isDemonstration: false,
     attribution: 'Unsplash Architectural Collection',
     sourceUrl: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3',
     license: 'Unsplash License',
@@ -92,7 +88,7 @@ export const MEDIA_REGISTRY: Record<string, MediaAsset> = {
     alt: 'Newly built architectural living volume with masonry hearth, clerestory steel-framed windows, wide-plank oak flooring, and mitered stone edge',
     width: 1800,
     height: 1200,
-    isDemonstration: true,
+    isDemonstration: false,
     attribution: 'Salvo Media LLC / Unsplash',
     sourceUrl: 'https://images.unsplash.com/photo-1783125127053-db9f268a847b',
     license: 'Unsplash License',
@@ -103,7 +99,7 @@ export const MEDIA_REGISTRY: Record<string, MediaAsset> = {
     alt: 'Close-up architectural study of linear fireplace inset within hand-laid light stone masonry and wide-plank white oak flooring',
     width: 1600,
     height: 1067,
-    isDemonstration: true,
+    isDemonstration: false,
     attribution: 'Salvo Media LLC / Unsplash',
     sourceUrl: 'https://images.unsplash.com/photo-1783125127172-1898fe16b2ec',
     license: 'Unsplash License',
@@ -114,7 +110,7 @@ export const MEDIA_REGISTRY: Record<string, MediaAsset> = {
     alt: 'Interior architectural corner showing floor-to-ceiling black steel window mullions, perforated exterior privacy screen, and oak flooring',
     width: 1600,
     height: 1067,
-    isDemonstration: true,
+    isDemonstration: false,
     attribution: 'Unsplash Architectural Collection',
     sourceUrl: 'https://images.unsplash.com/photo-1600573472591-ee6b68d14c68',
     license: 'Unsplash License',
@@ -125,7 +121,7 @@ export const MEDIA_REGISTRY: Record<string, MediaAsset> = {
     alt: 'Serene architectural primary suite with recessed ceiling details, black steel French doors, and custom floor-to-ceiling drapery pocket',
     width: 1600,
     height: 1067,
-    isDemonstration: true,
+    isDemonstration: false,
     attribution: 'Unsplash Architectural Collection',
     sourceUrl: 'https://images.unsplash.com/photo-1600607687644-c7171b42498f',
     license: 'Unsplash License',
@@ -136,7 +132,7 @@ export const MEDIA_REGISTRY: Record<string, MediaAsset> = {
     alt: 'Sunlit remodeled living space with floating oak-and-steel staircase, full-height black window walls, and custom dark millwork credenza',
     width: 2000,
     height: 1333,
-    isDemonstration: true,
+    isDemonstration: false,
     attribution: 'Unsplash Architectural Collection',
     sourceUrl: 'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea',
     license: 'Unsplash License',
@@ -147,7 +143,7 @@ export const MEDIA_REGISTRY: Record<string, MediaAsset> = {
     alt: 'Modern charcoal architectural facade with black structural steel pergola, dark glazing, and stone terrace',
     width: 1800,
     height: 1201,
-    isDemonstration: true,
+    isDemonstration: false,
     attribution: 'Max Vakhtbovych / Pexels',
     sourceUrl: 'https://www.pexels.com/photo/modern-house-exterior-7587880/',
     license: 'Pexels License',

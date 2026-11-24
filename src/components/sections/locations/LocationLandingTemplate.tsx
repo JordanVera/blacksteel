@@ -9,7 +9,6 @@ import { SectionShell } from "@/components/layout/SectionShell";
 import { PageHero } from "@/components/sections/shared/PageHero";
 import { EditorialHeading } from "@/components/ui/EditorialHeading";
 import { ActionLink } from "@/components/ui/ActionLink";
-import { DemoBadge } from "@/components/ui/DemoBadge";
 import { ArchitecturalRule } from "@/components/motion/ArchitecturalRule";
 import { FinalConversionSection } from "@/components/sections/home/FinalConversionSection";
 
@@ -142,16 +141,12 @@ export function LocationLandingTemplate({
             <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
               <div>
                 <p className="eyebrow-label text-[#5C5B58] dark:text-[#A7A6A3]">
-                  Regional Demonstration Studies
+                  Regional Portfolio
                 </p>
                 <h2 className="mt-2 font-display text-2xl font-semibold tracking-[-0.025em] sm:text-3xl">
                   {market.city} Architectural Studies
                 </h2>
               </div>
-              <DemoBadge
-                label="Demonstration Portfolio Content"
-                variant="surface"
-              />
             </div>
 
             <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2">
