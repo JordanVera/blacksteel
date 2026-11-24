@@ -121,6 +121,20 @@
   background-size: 64px 64px;
 }
 
+@utility bg-blueprint-grid {
+  background-image:
+    linear-gradient(to right, rgba(196, 214, 232, 0.16) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(196, 214, 232, 0.16) 1px, transparent 1px),
+    linear-gradient(to right, rgba(196, 214, 232, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(196, 214, 232, 0.06) 1px, transparent 1px);
+  background-size: 128px 128px, 128px 128px, 32px 32px, 32px 32px;
+}
+
+/* Photo-to-blueprint tone conversion; pair with a steel-blue mix-blend-color tint */
+@utility blueprint-filter {
+  filter: grayscale(1) invert(1) contrast(1.45) brightness(0.72);
+}
+
 @utility bg-arch-dots {
   background-image: radial-gradient(var(--arch-dot-color) 1px, transparent 1px);
   background-size: 20px 20px;
